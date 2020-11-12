@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+  <html>
+    <head>
+      <style>
+        body {
+          background-image: url("assets/static/images/Phoenix311Image.png");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      </style>
+    </head>
+    <body>
+      <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"
+      ></script>
+
+      <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"
+      ></script>
+      <script src="lex-web-ui-loader.min.js"></script>
+      <script>
+        // The loader constructor supports various configurable options used to
+        // control how the component configuration and dependencies are retrieved.
+        var loaderOpts = {
+          // Point the baseUrl option to the the base URL used to download
+          // the chatbot UI files and dependencies.
+          // In this example, the base URL is relative to the root path
+          // You can also use full URLs:
+          //    baseUrl: 'https://iframe-host.example.org/lex-web-ui/'
+          baseUrl: "/",
+
+          // enable receiving chatbot UI config from event
+          // the event is used as an alternative to passing the chatbot
+          // UI via JSON file or via the parameter in the load() function
+          shouldLoadConfigFromEvent: true,
+
+          // Controls if it should load minimized production dependecies
+          // defaults to true for production builds and false in development
+          shouldLoadMinDeps: true,
+        };
+
+        // ChatBotUiLoader contains the IframeLoader constructor
+        // Instantiate the loader and pass the loader options
+        var iframeLoader = new ChatBotUiLoader.IframeLoader(loaderOpts);
+
+        // You can override the chatbot UI config by passing a parameter
+        var chatbotUiconfig = {
+          // if the iframe page is hosted on a different site,
+          // you should configure the parentOrigin and iframeOrigin
+          /*
+        ui: {
+          // origin of the parent site where you are including the chatbot UI
+          parentOrigin: 'https://mysite.example.org'
+        },
+        iframe: {
+          // origin hosting the HTML file that will be embedded in the iframe
+          iframeOrigin: 'https://iframe-host.example.org'
+        }
+        */
+        };
+
+        // load the iframe
+        iframeLoader
+          .load(chatbotUiconfig)
+          .then(function () {
+            // at this point the API is available
+            // so I can send a ping to the iframe
+            iframeLoader.api.ping();
+
+            // perform actions on the parent dependent on the chatbot
+            // loading. For example, enable the send button once the
+            // chatbot UI is loaded
+            $("#send-intent").prop("disabled", false);
+          })
+          .catch(function (error) {
+            console.error("chatbot UI failed to load", error);
+          });
+
+        // Sample function illustrating dynamic messaging with the iframe using
+        // the API. This function is called from the event handler of the "Send"
+        // button.
+        function sendUtterance(utterance) {
+          // function to determine if the iframe is minimized
+          function isBotMinimized() {
+            // look at the options of the loader to determine the iframe
+            // element ID
+            var elementId = iframeLoader.options.elementId;
+
+            // this class is present in the iframe when minimized
+            var minimizedClass = "lex-web-ui-iframe--minimize";
+            return $("#" + elementId).hasClass(minimizedClass);
+          }
+
+          return Promise.resolve()
+            .then(function () {
+              // use the toggleMinimizeUi API if the iframe is minimized
+              return !isBotMinimized() || iframeLoader.api.toggleMinimizeUi();
+            })
+            .then(function () {
+              return iframeLoader.api.postText(utterance);
+            })
+            .then(function () {
+              console.log("message succesfully sent");
+            })
+            .catch(function (err) {
+              console.error("error sending message ", err);
+            });
+        }
+      </script>
+      <script>
+        $(document).ready(function chatbotHandler() {
+          // When the chatbot ui iframe is ready to receive the
+          // dynamic config it sends the 'receivelexconfig' event to the parent
+          // For example, you can send dynamic config/parameters
+          // (e.g. username, geolocation) to the chatbot ui from here
+          $(document).one("receivelexconfig", function onReceiveLexConfig() {
+            var localTimeZone;
+            try {
+              localTimeZone = JSON.stringify(
+                Intl.DateTimeFormat().resolvedOptions().timeZone
+              );
+            } catch (err) {
+              localTimeZone = JSON.stringify(new Date().getTimezoneOffset());
+            }
+
+            // sample config passing the local timezone in a sessionAttribute
+            var config = {
+              lex: {
+                sessionAttributes: {
+                  localTimeZone: JSON.stringify(
+                    Intl.DateTimeFormat().resolvedOptions().timeZone
+                  ),
+                },
+              },
+            };
+
+            // emit bot config event to send the dynamic config to the
+            // chatbot UI
+            // jquery can't trigger native events so use vanilla JS CustomEvent
+            var event = new CustomEvent("loadlexconfig", {
+              detail: { config: config },
+            });
+            document.dispatchEvent(event);
+          });
+
+          // Once the chatbot UI is ready, it sends a 'lexWebUiReady' event
+          $(document).on("lexWebUiReady", function onUpdateLexState(evt) {
+            // We are just sending a ping request here as an example
+            // This example uses an event instead of calling
+            // iframeLoader.api.ping() to show the asynchronous
+            // event API alternative
+            var event = new CustomEvent("lexWebUiMessage", {
+              detail: { message: { event: "ping" } },
+            });
+            document.dispatchEvent(event);
+          });
+
+          // setup Send button handler
+          $("#send-intent").on("click", function (event) {
+            event.preventDefault();
+            sendUtterance("Buy Flowers");
+          });
+
+          // bot update event handler
+          // In this example, the parent page is updated based on the state
+          $(document).on("updatelexstate", function onUpdateLexState(evt) {
+            var slots = {};
+            var dialogState = {};
+            var intentName = "";
+            var sessionAttributes = {};
+            var responseCard = {};
+
+            var iFramDiv = document.getElementById("lex-web-ui-iframe");
+            var iFrameCaught = iFramDiv.getElementsByTagName("iframe");
+
+            var doc = iFrameCaught[0].contentDocument
+              ? iFrameCaught[0].contentDocument
+              : iFrameCaught[0].contentWindow.document;
+            console.log(doc.getElementsByTagName("div").length);
+
+            var searchText =
+              "https://phxatyourservice.dynamics365portals.us/sstwaterservice/?stepid=bbaa1236-6cb0-e711-8115-1458d04e2938&sessionid=9f5836dc-720e-eb11-a813-001dd8018831 ";
+            var found;
+            console.log(doc.getElementsByClassName("message-text"));
+
+            var xpath = "//a[text()='water']";
+            var matchingElement = doc.evaluate(
+              xpath,
+              document,
+              null,
+              XPathResult.FIRST_ORDERED_NODE_TYPE,
+              null
+            ).singleNodeValue;
+            console.log(matchingElement);
+            for (
+              var i = 0;
+              i < doc.getElementsByClassName("message-text").length;
+              i++
+            ) {
+              if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("WaterLink8875214091") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link(
+                  "https://phxatyourservice.dynamics365portals.us/sstwaterservice/?stepid=bbaa1236-6cb0-e711-8115-1458d04e2938&sessionid=9f5836dc-720e-eb11-a813-001dd8018831"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " for questions regarding water services in the City of Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OnlineLibrary6174002917") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link(
+                  "http://www.phoenixpubliclibrary.org/ServicesForYou/Borrowing-Items/Pages/Library-Fees.aspx"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " to pay your City of Phoenix library bill online.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OnlineWater6426512734") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link("https://paycityservices.phoenix.gov/");
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " to pay your City of Phoenix  water bill  online.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("Recycling5795568820") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link(
+                  "https://www.phoenix.gov/publicworks/residential-recycling"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " for assistance regarding recycling in the City of Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OnlineTax3237688344") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link(
+                  "https://www.phoenix.gov/finance/plt/e-tax"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " to pay your City of Phoenix tax bill online.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OnlineParks8693702296") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link(
+                  "https://apm.activecommunities.com/phoenix/Home"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " to pay your City of Phoenix parks and recreation bill online.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OnlineParking3403882812") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link("https://novpayments.phoenix.gov/");
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " to pay your City of Phoenix parking ticket bill online.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("HazardousLink7300503163") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link(
+                  "https://www.phoenix.gov/publicworks/hhw"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " for assistance regarding hazardous waste in the City of Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("WasteContainer3143500222") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link(
+                  "https://phxatyourservice.dynamics365portals.us/solidwastecontainer/?stepid=30d4ffda-6bb3-e711-8117-1458d04eaba0&sessionid=4ce77644-d8f9-ea11-a813-001dd8018230"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " for questions regarding waste container requests or replacements.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("MissedCollection5701248932") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link(
+                  "https://phxatyourservice.dynamics365portals.us/solidwastecontainer/?stepid=30d4ffda-6bb3-e711-8117-1458d04eaba0&sessionid=4ce77644-d8f9-ea11-a813-001dd8018230"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " for assistance with a missed trash collection.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("Court0389315289") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link(
+                  "https://prodpci.etimspayments.com/pbw/include/arizona/newinput.jsp"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " to pay your City of Phoenix court fee bill online.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OtherBulk7873014386") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link(
+                  "https://www.phoenix.gov/publicworks/bulktrash"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " for assistance regarding bulk trash in the City of Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("WaterLink8120117412") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link("https://phxatyourservice.dynamics365portals.us/sstwaterservice/?stepid=bbaa1236-6cb0-e711-8115-1458d04e2938&sessionid=9f5836dc-720e-eb11-a813-001dd8018831");
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para preguntas sobre agua en la Ciudad de Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("Recycling8279017093") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://www.phoenix.gov/publicworks/residential-recycling"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para asistencia con respecto al reciclaje en la Ciudad de Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("Recycling8279017093") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://www.phoenix.gov/publicworks/residential-recycling"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para asistencia con respecto al reciclaje en la Ciudad de Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OtherBulk7073476559") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://www.phoenix.gov/publicworks/bulktrash"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para asistencia con respecto a la basura en volumen en la Ciudad de Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OnlineParks7330562826") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://apm.activecommunities.com/phoenix/Home"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para pagar sus parques de la Ciudad de Phoenix y la factura de recreación en línea.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OnlineLibrary2511279041") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "http://www.phoenixpubliclibrary.org/ServicesForYou/Borrowing-Items/Pages/Library-Fees.aspx"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para pagar su factura de la biblioteca de Ciudad de Phoenix en línea.";
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OnlineParking6949539335") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link("https://novpayments.phoenix.gov/");
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para pagar su factura de boletos de estacionamiento de Ciudad de Phoenix en línea.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("HazardousLink0042833764") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://www.phoenix.gov/publicworks/hhw"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para asistencia en materia de residuos peligrosos en la Ciudad de Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("HazardousLink0042833764") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://www.phoenix.gov/publicworks/hhw"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para asistencia en materia de residuos peligrosos en la Ciudad de Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("WasteContainer5956239438") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://phxatyourservice.dynamics365portals.us/solidwastecontainer/?stepid=30d4ffda-6bb3-e711-8117-1458d04eaba0&sessionid=4ce77644-d8f9-ea11-a813-001dd8018230"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para preguntas sobre los contenedores de residuos o su sustitución.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("InPersonCourt3129688039") !== -1
+              ) {
+                var str = "click here";
+                var result = str.link(
+                  "https://www.phoenix.gov/court/contact-us"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " for information regarding paying City of Phoenix court bills.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OtherTrash9722740958") !== -1
+              ) {
+                var str = "click here";
+                var result = str.link("https://www.phoenix.gov/publicworks");
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " for assistance regarding trash in the City of Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OtherTrash7479076960") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link("https://www.phoenix.gov/publicworks");
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para obtener ayuda con respecto a la basura en la Ciudad de Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OnlineWater8949885981") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link("https://paycityservices.phoenix.gov/");
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para pagar su factura de agua de la Ciudad de Phoenix en línea.";
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OnlineTax7448588173") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://www.phoenix.gov/finance/plt/e-tax"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para pagar su factura de impuestos de la Ciudad de Phoenix en línea.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("OnlineCourt3404966442") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://prodpci.etimspayments.com/pbw/include/arizona/newinput.jsp"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  "para pagar su factura de cuota de la corte de la Ciudad de Phoenix en línea.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("InPersonTax4917460796") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link(
+                  "https://www.phoenix.gov/finance/plt/contact-tax-and-license"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " + result + "for information regarding paying taxes.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("InPersonParking0204010350") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://www.phoenix.gov/court/violations-complaints/parking-tickets"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  "para obtener información sobre el pago de las facturas de las multas de estacionamiento.";
+
+                break;
+              } 
+              else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("InPersonTax1564314502") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://www.phoenix.gov/finance/plt/contact-tax-and-license"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para obtener información sobre el pago de los impuestos en persona.";
+
+                break;
+              }
+              
+              
+              
+              else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("InPersonCourt0374031943") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://www.phoenix.gov/court/contact-us"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " para obtener información sobre el pago de las facturas de la corte de la Ciudad de Phoenix.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("MissedCollection5341546347") !== -1
+              ) {
+                var str = "haga clic aquí ";
+                var result = str.link(
+                  "https://phxatyourservice.dynamics365portals.us/solidwastecontainer/?stepid=30d4ffda-6bb3-e711-8117-1458d04eaba0&sessionid=4ce77644-d8f9-ea11-a813-001dd8018230"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Por favor " +
+                  result +
+                  " si necesita ayuda con una recolección de basura perdida.";
+
+                break;
+              } else if (
+                doc
+                  .getElementsByClassName("message-text")
+                  [i].innerHTML.indexOf("InPersonParking7078055312") !== -1
+              ) {
+                var str = "click here ";
+                var result = str.link(
+                  "https://www.phoenix.gov/court/violations-complaints/parking-tickets"
+                );
+                doc.getElementsByClassName("message-text")[i].innerHTML =
+                  "Please " +
+                  result +
+                  " for information regarding paying parking ticket bills. ";
+
+                break;
+              }
+              
+              else {
+                console.log("no else condition");
+              }
+            }
+
+            var anchors = doc.getElementsByTagName("a");
+            for (var i = 0; i < anchors.length; i++) {
+              if (anchors[i].hostname != window.location.hostname) {
+                anchors[i].setAttribute("target", "_blank");
+
+                console.log("try");
+              }
+            }
+          });
+        });
+      </script>
+    </body>
+  </html>
+</html>

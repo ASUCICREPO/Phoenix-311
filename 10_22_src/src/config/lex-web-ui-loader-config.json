@@ -1,0 +1,50 @@
+{
+  "region": "us-east-1",
+  "cognito": {
+    "poolId": "us-east-1:3399d173-bbcc-49f3-8251-d29d534b7f30",
+    "appUserPoolClientId": "",
+    "appUserPoolName": "",
+    "appDomainName": "",
+    "aws_cognito_region": "us-east-1",
+    "region": "us-east-1",
+    "appUserPoolIdentityProvider": ""
+  },
+  "lex": {
+    "botName": "PhoenixChatBot",
+    "botAlias": "$LATEST",
+    "initialText": "Hello! I am Sofia, the new chatbot for the City of Phoenix. You can enter a question like \"How do I start water services?\" or type “Home” at any point in the process to go to the main menu. Para Español, escribe ‘hogar’.",
+    "initialSpeechInstruction": "",
+    "reInitSessionAttributesOnRestart": false,
+    "region": "us-east-1"
+  },
+  "ui": {
+    "parentOrigin": "",
+    "toolbarTitle": "Phoenix 311",
+    "toolbarLogo": "",
+    "positiveFeedbackIntent": "",
+    "negativeFeedbackIntent": "",
+    "helpIntent": "help",
+    "minButtonToolTipContent": "Open Chatbot",
+    "enableLogin": false,
+    "AllowSuperDangerousHTMLInMessage": true,
+    "shouldDisplayResponseCardTitle": false,
+    "hideInputFieldsForButtonResponse": false,
+    "pushInitialTextOnRestart": false,
+    "directFocusToBotInput": false,
+    "showDialogStateIcon": false,
+    "backButton": false,
+    "messageMenu": true,
+    "hideButtonMessageBubble": false
+  },
+  "polly": {
+    "voiceId": "Salli"
+  },
+  "recorder": {
+    "preset": "speech_recognition"
+  },
+  "iframe": {
+    "iframeOrigin": "",
+    "shouldLoadIframeMinimized": false,
+    "iframeSrcPath": "/index.html#/?lexWebUiEmbed=true"
+  }
+}
