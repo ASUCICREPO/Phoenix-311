@@ -1,0 +1,15 @@
+{
+  "name": "bulktrash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "idhant",
+  "license": "ISC",
+  "devDependencies": {
+    "chrome-aws-lambda": "^5.2.1",
+    "puppeteer": "^5.2.1"
+  }
+}
