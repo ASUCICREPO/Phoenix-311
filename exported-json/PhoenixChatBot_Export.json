@@ -1,0 +1,4220 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "PhoenixChatBot",
+    "version": "64",
+    "intents": [
+      {
+        "name": "PayWaterOnPhone",
+        "version": "2",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Pay water on the phone",
+          "Pay water with my phone",
+          "Pay water with a phone",
+          "Pay for a water bill on the phone",
+          "Pay for a water fee on the phone",
+          "Pay for a water fine on the phone",
+          "Pay for a water penalty on the phone",
+          "Pay water bills on the phone",
+          "Pay water fees on the phone",
+          "Pay water fines on the phone",
+          "Pay water penalties on the phone",
+          "Pay for water on the phone",
+          "WPhone"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "To pay your City of Phoenix water bill on the phone, please call 602-262-6251 and say 'Payment'."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_BulkTrash",
+        "version": "9",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "BVolumen",
+          "Basura en volumen",
+          "Ayuda con la basura en volumen",
+          "Tengo una pregunta sobre la basura en volumen",
+          "Tengo preguntas sobre la basura en volumen",
+          "Quiero más información sobre la basura en volumen",
+          "Quiero ayuda con la basura en volumen",
+          "Información sobre la basura en volumen",
+          "Necesito ayuda con la basura en volumen",
+          "Ayuda con respecto a la basura en volumen",
+          "Ayúdeme con la basura en volumen",
+          "Puede darme información sobre la basura en volumen",
+          "Puede ayudarme a encontrar información sobre la basura en volumen",
+          "Puede decirme dónde encontrar información sobre la basura en volumen",
+          "Quiero que se respondan preguntas sobre la basura en volumen",
+          "Quiero que las preguntas respondan sobre la basura en volumen",
+          "Estoy solicitando ayuda con la basura en volumen",
+          "Me gustaría solicitar ayuda con la basura en volumen",
+          "Asistencia de basura en volumen"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Seleccione una de las siguientes:\",\"title\":\"Bulk Trash Decisions - Spanish\",\"buttons\":[{\"text\":\"Horario de Basura a Volumen\",\"value\":\"HVolumen\"},{\"text\":\"Otras - Basura a Volumen\",\"value\":\"OtrasBV\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Puedo ayudarlo con recolección de basura en volumen en su área u otras preguntas relacionadas con la recolección de basura en volumen."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_OnlineTax",
+        "version": "24",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "ILínea",
+          "Cómo puedo pagar mis impuestos por internet",
+          "Me gustaría pagar mis impuestos por internet",
+          "Quiero hacer un pago de impuestos por internet",
+          "Quiero pagar mi tasa de impuestos por internet",
+          "Pagar un impuesto por internet",
+          "Hacer un pago tasa de impuestos por internet",
+          "Hacer un pago por la multa fiscal por internet",
+          "Hacer pagos de impuestos por internet",
+          "Hacer un pago de impuestos por internet",
+          "Pagar un pago de impuestos por internet",
+          "Pagar impuestos por internet",
+          "Pagar tasas de impuestos por internet",
+          "Pagar sanciones fiscales por internet",
+          "Pagar multas de impuestos por internet",
+          "Puedo pagar los impuestos por internet",
+          "Puedo hacer un pago de impuestos por internet",
+          "Hacer un pago de una multa fiscal por internet",
+          "Hacer un pago de una multa de impuestos por internet",
+          "Hacer un pago de una penalización fiscal por internet",
+          "Hacer un pago de la tasa de impuestos por internet",
+          "Hacer un pago de multas fiscales por internet",
+          "Hacer un pago una de una multa fiscal e pago por internet",
+          "Hacer un pago de una multa fiscal e pago por internet",
+          "Hacer un pago de una factura de impuestos por internet",
+          "Tengo una factura de impuestos que me gustaría pagar por internet",
+          "Tengo una tasa de impuestos que me gustaría pagar por internet",
+          "Tengo una multa fiscal que me gustaría pagar por internet",
+          "Tengo sanciones fiscales que me gustaría pagar por internet",
+          "Tengo facturas de impuestos que me gustaría pagar por internet",
+          "Tengo tasas de impuestos que me gustaría pagar por internet",
+          "Tengo multas fiscales que me gustaría pagar por internet",
+          "Asistencia de pago de multas fiscales por internet",
+          "Asistencia de pago de facturas de impuestos por internet",
+          "Asistencia de pago de tasas de impuestos por internet",
+          "Asistencia por internet de pago de multas fiscales",
+          "Asistencia de pago de una penalización fiscal por internet",
+          "Impuestos en linea"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Para pagar su factura de impuestos de la Ciudad de Phoenix en línea, siga el enlace OnlineTax7448588173 https://www.phoenix.gov/finance/plt/e-tax"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_OnlineParkingTicket",
+        "version": "19",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "ELínea",
+          "Me gustaría pagar mi factura por la multa de estacionamiento por internet",
+          "Multa de estacionamiento por internet",
+          "Pagar por el multa de estacionamiento por internet",
+          "Multa de estacionamiento de la ciudad de Phoenix por internet",
+          "Pagar la multa de estacionamiento por internet",
+          "Pagar la multa de estacionamiento en Phoenix por internet",
+          "Quiero hacer un pago de entrada al estacionamiento por internet",
+          "Hacer el pago de una multa de estacionamiento por internet",
+          "Pagar un multa de estacionamiento por internet",
+          "Hacer un pago por la cuota de estacionamiento por internet",
+          "Pagar multas de estacionamiento por internet",
+          "Hacer un pago por la factura de las multas de estacionamiento por internet",
+          "Pagar las cuotas de estacionamiento por internet",
+          "Pagar multas por internet",
+          "Pagar las facturas de las multas de estacionamiento por internet",
+          "Hacer el pago de una factura por la multa de estacionamiento por internet",
+          "Hacer un pago de la cuota de estacionamiento por internet",
+          "Hacer un pago de una multa de estacionamiento por internet",
+          "Hacer pagos de las cuentas de estacionamiento por internet",
+          "Puedo pagar los multas de estacionamiento por internet",
+          "Puedo pagar las multas de estacionamiento por internet",
+          "Puedo hacer el pago de una multa de estacionamiento por internet",
+          "Puedo hacer un pago de una multa de estacionamiento por internet",
+          "Hacer un pago de la cuota de la multa de estacionamiento por internet",
+          "Hacer un pago de una multa por internet",
+          "Hacer un pago de multa de estacionamiento por internet",
+          "Hacer una multa de estacionamiento por internet",
+          "Tengo multas de estacionamiento que me gustaría pagar por internet",
+          "Tengo cuotas de multas de estacionamiento que me gustaría pagar por internet",
+          "Tengo facturas de multas de estacionamiento que me gustaría pagar por internet",
+          "Tengo una multa de estacionamiento que me gustaría pagar por internet",
+          "Tengo una cuota de una multa de estacionamiento que me gustaría pagar por internet",
+          "Tengo multa de estacionamiento que me gustaría pagar por internet",
+          "Tengo cuotas de multa de estacionamiento que me gustaría pagar por internet",
+          "Tengo facturas de multa de estacionamiento que me gustaría pagar por internet",
+          "Tengo una cuota de multa de estacionamiento que me gustaría pagar por internet",
+          "Tengo una multa de estacionamiento que me gustaría estar por internet",
+          "Asistencia de pago de multas de estacionamiento por internet",
+          "Asistencia de pago de la cuota de venta de entrada al estacionamiento por internet",
+          "Asistencia de pago con las multas",
+          "Asistencia de pago de facturas de multa de estacionamiento por internet",
+          "Asistencia de pago de facturas de estacionamiento por internet",
+          "Asistencia de pago de la cuota de la multa de estacionamiento por internet",
+          "Asistencia de pago de la cuota de estacionamiento por internet",
+          "Asistencia de pago de multas por internet ",
+          "Asistencia de pago de una multa de estacionamiento por internet"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Para pagar su factura de boletos de estacionamiento de Ciudad de Phoenix en línea, siga el enlace OnlineParking6949539335 https://novpayments.phoenix.gov/"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_InPersonLibrary",
+        "version": "9",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "BPersona",
+          "Pago de la biblioteca en persona",
+          "Me gustaría pagar mi cuota de la biblioteca en persona",
+          "Cómo puedo pagar mi cuota de la biblioteca en persona",
+          "Cómo puedo pagar mi factura de la biblioteca en persona",
+          "Me gustaría pagar mi factura de la biblioteca en persona",
+          "Quiero hacer un pago de la biblioteca en persona",
+          "Quiero pagar la multa de la biblioteca en persona",
+          "Quiero hacer un pago por la cuota de la biblioteca en persona",
+          "Quiero pagar las cuotas de la biblioteca en persona",
+          "Me gustaría pagar sanciones a la biblioteca en persona",
+          "Hacer un pago de la biblioteca en persona",
+          "Hacer un pago de cuota de la biblioteca en persona",
+          "Hacer un pago de una multa de la biblioteca en persona",
+          "Hacer una multa por multa de la biblioteca en persona",
+          "Hacer un pago por las facturas de la biblioteca en persona",
+          "Hacer un pago por las cuotas de la biblioteca en persona",
+          "Hacer un pago por las multas de la biblioteca en persona",
+          "Hacer un pago por la factura de la biblioteca en persona",
+          "Hacer un pago por la cuota de la biblioteca en persona",
+          "Pagar las cuotas de la biblioteca en persona",
+          "Pagar las multas de la biblioteca en persona",
+          "Pagar sanciones de la biblioteca en persona",
+          "Hacer un pago por una factura de la biblioteca en persona",
+          "Hacer un pago por una cuota de la biblioteca en persona",
+          "Hacer un pago por una multa de la biblioteca en persona",
+          "Tengo cuotas de la biblioteca que me gustaría pagar en persona",
+          "Tengo multas de la biblioteca que me gustaría pagar en persona",
+          "Tengo sanciones de la biblioteca que me gustaría pagar en persona",
+          "Tengo facturas de la biblioteca que me gustaría pagar en persona",
+          "Tengo una factura de la biblioteca que me gustaría pagar en persona",
+          "Tengo una multa de la biblioteca que me gustaría pagar en persona",
+          "Asistencia de pago por multas en persona",
+          "Asistencia de pago de cuotas de la biblioteca en persona",
+          "Asistencia en la biblioteca de pago de multas",
+          "Asistencia de pago de facturas en persona",
+          "Biblioteca en persona"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "*COVID-19 ha suspendido los pagos por mora por cargos de biblioteca. Esto está sujeto a cambios.*"
+            }
+          ]
+        }
+      },
+      {
+        "name": "InitialConnection",
+        "version": "9",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Hello",
+          "Hi",
+          "Hey",
+          "Home"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"*currently included is water, trash, and payments*\",\"title\":\"You can ask a specific question or select one of the following city services:\",\"buttons\":[{\"text\":\"Water\",\"value\":\"Water\"},{\"text\":\"Trash\",\"value\":\"Trash\"},{\"text\":\"Payments\",\"value\":\"Payments\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "What city service can I assist you with today?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_PayParksAndRec",
+        "version": "6",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Pagar a los Parques y Recreación",
+          "Parque",
+          "Parques y Recreación",
+          "Pago de los Parques y Recreación",
+          "Pagos de los Parques y Recreación",
+          "Cuotas de los Parques y Recreación",
+          "Cuota de los Parques y Recreación",
+          "Sanción de los Parques y Recreación",
+          "Pago del parque",
+          "Cuota del parque",
+          "Cuotas del parque",
+          "Multa del parque",
+          "Sanción del parque",
+          "Sanciones en el parque",
+          "Pagar por un Parque y Recreación",
+          "Hacer un pago de una multa de los Parques y Recreación",
+          "Multa de los Parques y Recreación",
+          "Necesito hacer un pago por la cuota de los Parques y Recreación",
+          "Necesito pagar las cuotas de los Parques y Recreación",
+          "Hacer un pago de los Parques y Recreación",
+          "Hay una penalización por un pago tardío de los Parques y Recreación",
+          "Necesito de pagar de los Parques y Recreación",
+          "Hacer un pago por De los Parques y Recreación",
+          "Pagar por una multa de los Parques y Recreación",
+          "Pagar por una factura de los Parques y Recreación",
+          "Pagar por una cuota de los Parques y Recreación",
+          "Pagar por una penalización de los Parques y Recreación",
+          "Pagar por de los parques y sanciones recreativas",
+          "Pagar por de los parques y multas recreativas",
+          "Pagar por de los parques y cuotas de recreación ",
+          "Hacer un pago por una factura de los Parques y Recreación",
+          "Pagar las facturas de los Parques y Recreación",
+          "Hacer un pago por una cuota de los Parques y Recreación",
+          "Hacer un pago por las multas de los Parques y Recreación",
+          "Hacer un pago por una multa de los Parques y Recreación",
+          "Hacer un pago por las facturas de los Parques y Recreación",
+          "Hacer un pago por las cuotas de los Parques y Recreación",
+          "Tengo un pago de los Parques y Recreación que necesito hacer",
+          "Tengo un pago de los Parques y Recreación que quiero hacer",
+          "Tengo un pago de los Parques y Recreación que me gustaría hacer",
+          "Tengo pagos de los Parques y Recreación que necesito hacer",
+          "Tengo los pagos de los Parques y Recreación que quiero hacer",
+          "Tengo pagos de los Parques y Recreación que me gustaría hacer",
+          "Tengo pagos de los Parques y Recreación que quiero hacer",
+          "Asistencia de pago de multas de los Parques y Recreación",
+          "Asistencia de pago de cuotas de los Parques y Recreación",
+          "Asistencia de pago de facturas de los Parques y Recreación",
+          "Asistencia de pago de los Parques y Recreación",
+          "Asistencia con los pagos de cuotas de los Parques y Recreación",
+          "Asistencia con de los parques y pagos de multas recreativas",
+          "Asistencia con los pagos de facturas de los Parques y Recreación",
+          "Asistencia con los pagos de penalización de los Parques y Recreación",
+          "Asistencia con los pagos de los Parques y Recreación",
+          "Pagar por los Parques y Recreación"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Seleccione una de las siguientes:\",\"title\":\"En Línea o en persona\",\"buttons\":[{\"text\":\"En Persona\",\"value\":\"PRPersona\"},{\"text\":\"En Línea\",\"value\":\"PRLínea\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "¿Le gustaría pagar sus parques de la Ciudad de Phoenix y la factura de recreación en línea o en persona?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_PayParkingTicket",
+        "version": "8",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Pago de entrada al estacionamiento",
+          "Pago de estacionamiento",
+          "Pagos de entrada al estacionamiento",
+          "Pagos de estacionamiento",
+          "Cuotas de las entrada al estacionamiento",
+          "Cuotas de estacionamiento",
+          "Cuota de estacionamiento",
+          "Penalización de la multa por estacionamiento",
+          "Penalizaciones con multas por estacionamiento",
+          "Penalización por estacionamiento",
+          "Sanciones por estacionamiento",
+          "Pagar un multa de estacionamiento",
+          "Hacer un pago de una multa de estacionamiento",
+          "Multa de estacionamiento",
+          "Hacer el pago de una multa de estacionamiento",
+          "Necesito hacer un pago por la cuota de multa de estacionamiento",
+          "Necesito hacer un pago por la cuota de estacionamiento",
+          "Tengo que pagar las cuotas de estacionamiento",
+          "Hay una penalización por el pago de una multa de estacionamiento atrasado",
+          "Hacer un pago de estacionamiento",
+          "Hacer un pago por un multa de estacionamiento",
+          "Hacer un pago por multa de estacionamiento",
+          "Hacer un pago por las cuotas de las multa de estacionamiento",
+          "Completar el pago de las penalizaciones por multas de estacionamiento",
+          "Hacer un pago por las facturas de las multa de estacionamiento",
+          "Pagar por un multa de estacionamiento",
+          "Hacer un pago por la multa de estacionamiento",
+          "Hacer un pago por la cuota de multa del estacionamiento",
+          "Pague la multa de estacionamiento",
+          "Pagar las facturas de multa de estacionamiento",
+          "Pagar las cuotas de las multas por estacionamiento",
+          "Pagar multa de estacionamiento",
+          "Pagar por multa de estacionamiento",
+          "Hacer un pago por una cuota de entrada al estacionamiento",
+          "Hacer un pago por una multa de estacionamiento",
+          "Hacer un pago por una penalización de multa de estacionamiento",
+          "Hacer un pago por multas",
+          "Hacer un pago por las cuotas de las multas de estacionamiento",
+          "Tengo pagos de multa de estacionamiento que necesito hacer",
+          "Tengo pagos de multa de estacionamiento que quiero hacer",
+          "Tengo pagos de multa de estacionamiento que me gustaría hacer",
+          "Tengo un pago de multa de estacionamiento que necesito hacer",
+          "Tengo un pago de multa de estacionamiento que quiero hacer",
+          "Tengo un pago de multa de estacionamiento que me gustaría hacer",
+          "Tengo un pago de una multa de estacionamiento que me gustaría hacer",
+          "Asistencia con el pago de entrada de estacionamiento",
+          "Asistencia con el pago de la factura de la multa de estacionamiento",
+          "Asistencia con pagos de la cuota de la multa de estacionamiento",
+          "Asistencia con multas",
+          "Asistencia con pagos de penalización de multas ",
+          "Asistencia de pago de una multa de estacionamiento",
+          "Asistencia de pago de la factura de la multa de estacionamiento",
+          "Asistencia de pago de la cuota de la multa de estacionamiento",
+          "Asistencia de pago de entrada al estacionamiento"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Seleccione una de las siguientes:\",\"title\":\"En Línea o En Persona\",\"buttons\":[{\"text\":\"En Persona\",\"value\":\"EPersona\"},{\"text\":\"En Línea\",\"value\":\"ELínea\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "¿Le gustaría pagar su factura de boletos de estacionamiento de la Ciudad de Phoenix en línea o en persona?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "OtherBulkTrashQuestions",
+        "version": "18",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "BTOther",
+          "What can I put in my bulk trash",
+          "Can I put a couch in bulk trash",
+          "Can I put furniture in bulk trash",
+          "Is a table considered bulk trash",
+          "Where does bulk trash go",
+          "Do I put my bulk trash on the curb",
+          "Do I put my bulk trash in the street",
+          "Is a tire considered a bulk trash item",
+          "Can I put a chair in bulk trash",
+          "What can go in bulk trash",
+          "What is considered bulk trash",
+          "What items can I put in bulk trash",
+          "Does my bulk trash go in the road or driveway",
+          "What items are considered bulk trash",
+          "Other bulk trash"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Follow the link, OtherBulk7873014386 https://www.phoenix.gov/publicworks/bulktrash for assistance regarding bulk trash in the City of Phoenix."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_OnlineParksAndRec",
+        "version": "18",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "PRLínea",
+          "Quiero hacer un pago de los Parques y Recreación por internet",
+          "Hacer un pago de una multa de los Parques y Recreación por internet",
+          "Pagar de los Parques y Recreación por internet",
+          "Pagar por de los Parques y Recreación por internet",
+          "Pagar por los Parques y Recreación por internet",
+          "Hacer un pago de los Parques y Recreación por internet",
+          "Hacer un pago por los parques de pago y recreación por internet",
+          "Hacer un pago por la factura de los Parques y Recreación por internet",
+          "Hacer un pago por la cuota de los Parques y Recreación por internet",
+          "Hacer un pago por la multa de los Parques y Recreación por internet",
+          "Pagar de los parques y facturas de recreación por internet",
+          "Pagar de los parques y cuotas de recreación por internet",
+          "Pagar por las multas de los Parques y Recreación por internet",
+          "Puedo pagar por de los Parques y Recreación por internet",
+          "Puedo hacer un pago de los Parques y Recreación por internet",
+          "Haga un pago de multas de los Parques y Recreación por internet",
+          "Hacer un pago de una cuota de los Parques y Recreación por internet",
+          "Haga un pago de penalización de los Parques y Recreación por internet",
+          "Hacer un pago de penalización de los Parques y Recreación por internet",
+          "Hacer un pago de multa de los Parques y Recreación por internet",
+          "Haga un pago de factura de los Parques y Recreación por internet",
+          "Hacer un pago de una factura de los Parques y Recreación por internet",
+          "Tengo un pago los Parques y Recreación que me gustaría pagar por internet",
+          "Tengo una cuota de los Parques y Recreación que me gustaría pagar por internet",
+          "Tengo una factura de los Parques y Recreación que me gustaría pagar por internet",
+          "Tengo una penalización de los Parques y Recreación que me gustaría pagar por internet",
+          "Tengo multa de los Parques y Recreación que me gustaría pagar por internet",
+          "Tengo una multa los Parques y Recreación que me gustaría pagar por internet",
+          "Tengo cuotas de los Parques y Recreación que me gustaría pagar por internet",
+          "Tengo facturas de los Parques y Recreación que me gustaría pagar por internet",
+          "Tengo la factura de los Parques y Recreación que me gustaría pagar por internet",
+          "Tengo sanciones de los Parques y Recreación que me gustaría pagar por internet",
+          "Tengo una multa de los Parques y Recreación que me gustaría pagar por internet",
+          "Tengo una multa de ley de los Parques y Recreación que me gustaría pagar por internet",
+          "Asistencia de pago de multas por internet y de los parques recreativos",
+          "Asistencia de pago de cuotas de los Parques y Recreación por internet",
+          "Asistencia de pago en de los Parques y Recreación de pago de multas",
+          "Asistencia de pago de facturas de los Parques y Recreación por internet",
+          "Asistencia de pago de multas de los Parques y Recreación por internet",
+          "Asistencia de pago de las multas de los Parques y Recreación por internet",
+          "Asistencia de pago de las multas de los parques por internet",
+          "Pagar por los parques por internet"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Para pagar sus parques de la Ciudad de Phoenix y la factura de recreación en línea, siga el enlace OnlineParks7330562826 https://apm.activecommunities.com/phoenix/Home"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_OtherTrashQuestions",
+        "version": "17",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "OBasura",
+          "Otras papeleras",
+          "Cómo puedo conseguir un nuevo recipiente para la basura",
+          "Dónde pongo mi cubo de basura",
+          "Puedo poner pintura en mi basura",
+          "Puedo poner botellas en la basura",
+          "Puede el plástico ir en la basura",
+          "Puede el metal ir en la basura",
+          "Qué puedo poner en la basura",
+          "Lo que puede ir en la basura",
+          "Qué artículos no deben ir a la basura",
+          "Qué pasa si mi basura está demasiado llena",
+          "Qué pasa si la basura está demasiado llena",
+          "Tengo demasiada basura",
+          "Necesito un nuevo recipiente para la basura.",
+          "Otras basura",
+          "Otras basura en volumen"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Sigue el enlace, OtherTrash7479076960 https://www.phoenix.gov/publicworks para obtener ayuda con respecto a la basura en la Ciudad de Phoenix."
+            }
+          ]
+        }
+      },
+      {
+        "rejectionStatement": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Please enter the keywords \"Bulk Trash Schedule\" to enter your correct address."
+            }
+          ]
+        },
+        "name": "BulkTrashPickUpSchedule",
+        "version": "52",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:653928118540:function:bulktrash-dev-bulktrashpuckup",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "BTSchedule",
+          "Bulk pick up schedule",
+          "When is my bulk trash pick up",
+          "Bulk trash pick-up",
+          "Bulk pick up",
+          "Bulk trash pick up schedule",
+          "Bulk trash schedule",
+          "What is the schedule for bulk trash pick up",
+          "When does bulk trash get picked up",
+          "Bulk trash collection schedule",
+          "Bulk trash collection",
+          "Collection of bulk trash",
+          "When is the bulk trash collection",
+          "When is the collection of bulk trash in Phoenix",
+          "Can you give me more information about bulk trash pick up",
+          "Can you give me more information about the bulk trash schedule",
+          "Where can I find information about the bulk trash schedule",
+          "Where can I find information about bulk trash pick up",
+          "I need information about bulk trash pick up",
+          "I need help finding bulk trash pick up information",
+          "I need help finding bulk trash schedule information",
+          "I am requesting assistance with the bulk trash pick up schedule",
+          "I would like to request assistance with the bulk trash pick up schedule",
+          "Bulk pickup",
+          "Bulk trash pickup",
+          "When is bulk trash pickup",
+          "When is bulk pickup",
+          "What day of the week is the bulk trash pickup",
+          "Bulk trash pickup in the City of Phoenix",
+          "Bulk trash pickup assistance",
+          "Bulk trash pick up assistance",
+          "Bulk trash pick up schedule assistance"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.PostalAddress",
+            "obfuscationSetting": "DEFAULT_OBFUSCATION",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Please enter your residential address for bulk trash pick up:"
+                }
+              ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\"}",
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "UserAddress"
+          }
+        ],
+        "confirmationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Can you confirm that your current address for bulk trash pick-up is {UserAddress}? Say 'Yes' to confirm. Once confirmed, I may take a few seconds to retrieve the answer for you."
+            }
+          ],
+          "maxAttempts": 3
+        },
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "CustomPayload",
+              "content": "<h1>hi there</h1>"
+            }
+          ]
+        }
+      },
+      {
+        "name": "BulkTrash",
+        "version": "35",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Bulk Trash",
+          "Help with bulk trash",
+          "I have a question about bulk trash",
+          "I have questions about bulk trash",
+          "I need help with bulk trash",
+          "I want help with bulk trash",
+          "I want more information about bulk trash",
+          "I want assistance with bulk trash",
+          "Information about bulk trash",
+          "I need assistance with bulk trash",
+          "Help regarding bulk trash",
+          "Can you help me with bulk trash",
+          "Can you help me find information about bulk trash",
+          "Can you give me information about bulk trash",
+          "Can you find me information about bulk trash",
+          "Can you tell me where to find information about bulk trash",
+          "I want questions answered regarding bulk trash",
+          "I want questions answered about bulk trash",
+          "I am requesting assistance with bulk trash",
+          "I would like to request assistance with the bulk trash",
+          "Bulk trash assistance"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Select one of the following:\",\"title\":\"Bulk Trash Decisions\",\"buttons\":[{\"text\":\"Bulk Pick Up\",\"value\":\"BTSchedule\"},{\"text\":\"Other - Bulk Trash\",\"value\":\"BTOther\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "I can assist you with bulk trash pick up in your area or other bulk trash related questions."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_InPersonCourt",
+        "version": "10",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "TPersona",
+          "Ayuda con una factura de cuotas de la corte que se hizo en persona",
+          "Pagar cuota judicial en persona",
+          "Pagar la cuenta de la corte en persona",
+          "Cómo puedo pagar mi factura de la corte en persona",
+          "Me gustaría pagar mi factura de la corte en persona",
+          "Quiero hacer un pago judicial en persona",
+          "Hacer un pago judicial en persona",
+          "Hacer un pago de multas de la corte en persona",
+          "Hacer un pago de una cuota judicial en persona",
+          "Hacer un pago de multas judiciales en persona",
+          "Hacer un pago sanción judicial en persona",
+          "Hacer el pago de una factura judicial en persona",
+          "Hacer un pago de multa judicial en persona",
+          "Hacer un pago de cuota judicial en persona",
+          "Hacer un pago por las facturas de la corte en persona",
+          "Hacer un pago por multas judiciales en persona",
+          "Hacer un pago por cuotas judiciales en persona",
+          "Pagar las sanciones judiciales en persona",
+          "Pagar multas judiciales en persona",
+          "Pagar los cuotas de la corte en persona",
+          "Pagar las facturas de la corte en persona",
+          "Hacer un pago por la factura judicial en persona",
+          "Hacer un pago de una multa judicial en persona",
+          "Hacer un pago por la cuota judicial en persona",
+          "Asistencia en persona de pago de la corte",
+          "Cuota judicial asistencia de pago en persona",
+          "Asistencia de pago de una factura judicial en persona",
+          "Asistencia de pago judicial en persona",
+          "Asistencia en la corte de pago de multas en persona",
+          "Asistencia de pago de cuotas judiciales en persona",
+          "Asistencia de pago de facturas judicial en persona",
+          "Tengo sanciones judiciales que me gustaría pagar en persona",
+          "Tengo facturas judiciales que me gustaría pagar en persona",
+          "Tengo multas judiciales que me gustaría pagar en persona",
+          "Tengo cuotas judiciales que me gustaría pagar en persona",
+          "Tengo una sanción judicial que me gustaría pagar en persona",
+          "Tengo una multa judicial que me gustaría pagar en persona",
+          "Tengo un cuota de ley que me gustaría pagar en persona",
+          "Tengo una cuota judicial que me gustaría pagar en persona",
+          "Pagar tribunal en persona"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Para obtener información sobre el pago de las facturas de la corte de la Ciudad de Phoenix, siga el enlace InPersonCourt0374031943 https://www.phoenix.gov/court/contact-us"
+            }
+          ]
+        }
+      },
+      {
+        "name": "OnlineParkingTicketBill",
+        "version": "20",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "OPT",
+          "I would like to pay for my parking ticket bill online",
+          "Parking ticket bill online",
+          "Pay for parking ticket online",
+          "City of Phoenix parking ticket online ",
+          "Pay parking ticket online",
+          "Pay phoenix parking ticket online",
+          "Parking ticket online",
+          "Online parking ticket",
+          "I want to complete a parking ticket payment online",
+          "Make a parking ticket payment online",
+          "Pay a parking ticket on the web",
+          "Pay a parking ticket online",
+          "Pay a parking fee on the web",
+          "Pay a parking fee online",
+          "Pay a parking penalty on the web",
+          "Pay a parking penalty online",
+          "Pay a parking fine online",
+          "Pay a parking fine on the web",
+          "Pay parking tickets online",
+          "Pay parking tickets on the web",
+          "Pay parking tickets on the internet",
+          "Pay a parking ticket on the internet",
+          "Pay a parking ticket fee on the internet",
+          "Pay a parking ticket fine on the internet",
+          "Pay a parking ticket bill on the internet",
+          "Pay a parking ticket penalty on the internet",
+          "Pay parking ticket fees on the internet",
+          "Pay parking ticket fines on the internet",
+          "Pay parking ticket bills on the internet",
+          "Make a parking ticket bill payment on the internet",
+          "Make a parking ticket payment on the internet",
+          "Make a parking ticket fee payment on the internet",
+          "Make a parking ticket penalty payment on the internet",
+          "Make a parking ticket fine payment on the internet",
+          "Can I pay for parking tickets online",
+          "Can I pay for parking tickets on the web",
+          "Can I pay for parking tickets on the internet",
+          "Can I make a parking ticket payment online",
+          "Can I make a parking ticket payment on the web",
+          "Can I make a parking ticket payment on the internet",
+          "Make a parking ticket bill payment online",
+          "Make a parking ticket bill payment on the web",
+          "Make a parking ticket fee payment online",
+          "Make a parking ticket fee payment on the web",
+          "Make a parking ticket fine payment on the web",
+          "Make a parking ticket penalty payment online",
+          "Make a parking ticket penalty payment on the web",
+          "I have parking ticket fines that I would like to pay online",
+          "I have parking ticket fees that I would like to pay online",
+          "I have parking ticket bills that I would like to pay online",
+          "I have parking ticket penalties that I would like to pay online",
+          "I have a parking ticket fine that I would like to pay online",
+          "I have a parking ticket fee that I would like to pay online",
+          "I have a parking ticket bill that I would like to pay online",
+          "I have a parking ticket penalty that I would like to pay online",
+          "I have parking ticket fines that I would like to pay on the web",
+          "I have parking ticket fines that I would like to pay on the internet",
+          "I have parking ticket fees that I would like to pay on the web",
+          "I have parking ticket fees that I would like to pay on the internet",
+          "I have parking ticket penalties that I would like to pay on the web",
+          "I have parking ticket penalties that I would like to pay on the internet",
+          "I have parking ticket bills that I would like to pay on the web",
+          "I have parking ticket bills that I would like to pay on the internet",
+          "I have a parking ticket bill that I would like to pay on the web",
+          "I have a parking ticket bill that I would like to pay on the internet",
+          "I have a parking ticket fee that I would like to pay on the web",
+          "I have a parking ticket fee that I would like to pay on the internet",
+          "I have a parking ticket fine that I would like to pay on the web",
+          "I have a parking ticket fine that I would like to pay on the internet",
+          "I have a parking ticket penalty that I would like to pay on the web",
+          "I have a parking ticket penalty that I would like to pay on the internet",
+          "Online parking ticket penalty payment assistance",
+          "Online parking ticket fee payment assistance",
+          "Online parking ticket fine payment assistance",
+          "Online parking ticket bill payment assistance",
+          "Parking ticket bill payment assistance online",
+          "Parking ticket bill payment assistance on the web",
+          "Parking ticket bill payment assistance on the internet",
+          "Parking ticket fee payment assistance online",
+          "Parking ticket fee payment assistance on the web",
+          "Parking ticket fee payment assistance on the internet",
+          "Parking ticket fine payment assistance online",
+          "Parking ticket fine payment assistance on the web",
+          "Parking ticket fine payment assistance on the internet",
+          "Parking ticket penalty payment assistance online",
+          "Parking ticket penalty payment assistance on the web",
+          "Parking ticket penalty payment assistance on the internet"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "To pay your City of Phoenix parking ticket bill online, follow the link, OnlineParking3403882812 https://novpayments.phoenix.gov/ "
+            }
+          ]
+        }
+      },
+      {
+        "name": "PayCourtFees",
+        "version": "11",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Pay Court",
+          "Pay Court Fees",
+          "Court",
+          "Court payment",
+          "Court payments",
+          "Court fees",
+          "Court fee",
+          "Court penalty",
+          "Court penaltiews",
+          "Court penalties",
+          "Pay a court",
+          "Pay a court fine",
+          "Court fine",
+          "Court fines",
+          "Is there a penalty for a late court fee",
+          "I want to pay a court fee",
+          "I want to pay court fees",
+          "I would like to make a court payment",
+          "Make a court payment",
+          "I need to pay a court fee",
+          "Make a payment for court fees",
+          "Make a payment for court fines",
+          "Make a payment for court bills",
+          "Make a payment for court penalties",
+          "I have a court payment that I would like to make",
+          "I have a court payment that I need to make",
+          "I have court payments that I would like to make",
+          "I have court payments that I need to make",
+          "I have a court payment that I want to complete",
+          "I have a court payment that I would like to complete",
+          "I have a court payment that I need to complete",
+          "I have court payments that I want to complete",
+          "I have court payments that I would like to complete",
+          "I have court payments that I need to complete",
+          "Court payment assistance",
+          "Court fee payment assistance",
+          "Court bill payment assistance",
+          "Court fine payment assistance",
+          "Court penalty payment assistance",
+          "Assistance with court payments",
+          "Assistance with court fee payments",
+          "Assistance with court fine payments",
+          "Assistance with court penalty payments",
+          "Assistance with court bill payments"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Select one of the following:\",\"title\":\"Online or In-Person\",\"buttons\":[{\"text\":\"In-Person\",\"value\":\"InPCF\"},{\"text\":\"Online\",\"value\":\"OCFee\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Would you like to pay your City of Phoenix court fee bill online or in-person?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_OnlineWater",
+        "version": "15",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "ALínea",
+          "Cómo puedo pagar mi factura por el agua por internet",
+          "Cómo puedo pagar por el agua por internet",
+          "Me gustaría pagar mi factura por el agua por internet",
+          "Me gustaría pagar por el agua por internet",
+          "Quiero hacer un pago por el agua por internet",
+          "Quiero pagar mi cuota por el agua por internet",
+          "Me gustaría pagar los cargos por el agua por internet",
+          "Quiero pagar las cuotas por el agua por internet",
+          "Quiero hacer un pago de una multa por el agua por internet",
+          "Cómo hacer un pago por el agua por internet",
+          "Quiero pagar por el agua por internet",
+          "Pagar agua por internet",
+          "Hacer un pago por la cuota por el agua por internet",
+          "Pagar multa por el agua e por internet",
+          "Pagar la pena por el agua por internet",
+          "Pagar las cuotas por el agua por internet",
+          "Hacer un pago de una multa por el agua por internet",
+          "Puedo pagar el agua por internet",
+          "Puedo pagar por el agua por internet",
+          "Hacer un pago por el agua por internet",
+          "Puedo hacer un pago por el agua por internet",
+          "Hacer un pago de una cuota por el agua por internet",
+          "Hacer un pago de multas por el agua por internet",
+          "Hacer un pago de penalización por el agua por internet",
+          "Hacer una multa por pago por multa por el agua por internet",
+          "Hacer una multa por pago de una multa por el agua por internet",
+          "Hacer un pago de la factura por el agua por internet",
+          "Tengo multas por el agua que me gustaría pagar por internet",
+          "Tengo cuotas por el agua que me gustaría pagar por internet",
+          "Tengo facturas por el agua que me gustaría pagar por internet",
+          "Tengo sanciones por el agua que me gustaría pagar por internet",
+          "Tengo una sanción por el agua que me gustaría pagar por internet",
+          "Tengo una factura por el agua que me gustaría pagar por internet",
+          "Tengo una cuota por el agua que me gustaría pagar por internet",
+          "Tengo una multa por el agua que me gustaría pagar por internet",
+          "Tengo un agua bien pero me gustaría estar por internet",
+          "Asistencia de pago por multas por el agua por internet",
+          "Asistencia de pago de facturas por el agua por internet",
+          "Asistencia por internet de pago de multas por el agua",
+          "Asistencia de pago de tasas por el agua por internet",
+          "Asistencia de pago de cuotas por el agua por internet",
+          "Asistencia en el pago de multas por el agua por internet",
+          "Asistencia de pago de multas por el agua por internet"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Para pagar su factura de agua de la Ciudad de Phoenix en línea, siga el enlace OnlineWater8949885981 https://paycityservices.phoenix.gov/"
+            }
+          ]
+        }
+      },
+      {
+        "name": "OnlineParksAndRecBill",
+        "version": "16",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "OPRec",
+          "I would like to pay for my parks and recreation bill online",
+          "Parks and recreation bill online",
+          "Pay parks and recreation bill online",
+          "Pay parks and rec bill online",
+          "How can I pay for my parks and recreation bill online",
+          "Online parks and recreation bill",
+          "I want to complete a parks and recreation payment online",
+          "Make a parks and recreation payment online",
+          "Pay a parks and recreation bill on the web",
+          "Pay a parks and recreation fee on the web",
+          "Pay a parks and recreation fine on the web",
+          "Pay a parks and recreation penalty on the web",
+          "Make a parks and recreation payment on the web",
+          "Pay parks and rec on the web",
+          "Pay parks and recreation on the web",
+          "Parks and recreation on the web",
+          "Make a parks and recreation payment on the internet",
+          "Pay parks and recreation on the internet",
+          "Pay a parks and recreation bill on the internet",
+          "Pay a parks and recreation fee on the internet",
+          "Pay a parks and recreation fine on the internet",
+          "Pay a parks and recreation penalty on the internet",
+          "Pay parks and recreation bills on the internet",
+          "Pay parks and recreation fees on the internet",
+          "Pay parks and recreation fines on the internet",
+          "Can I pay for parks and recreation online",
+          "Can I pay for parks and recreation on the web",
+          "Can I pay for parks and recreation on the internet",
+          "Can I make a parks and recreation payment online",
+          "Can I make a parks and recreation payment on the web",
+          "Can I make a parks and recreation payment on the internet",
+          "Make a parks and recreation fine payment online",
+          "Make a parks and recreation fine payment on the web",
+          "Make a parks and recreation fine payment on the internet",
+          "Make a parks and recreation fee payment online",
+          "Make a parks and recreation fee payment on the web",
+          "Make a parks and recreation fee payment on the internet",
+          "Make a parks and recreation penalty payment online",
+          "Make a parks and recreation penalty payment on the web",
+          "Make a parks and recreation penalty payment on the internet",
+          "Make a parks and recreation bill payment online",
+          "Make a parks and recreation bill payment on the web",
+          "Make a parks and recreation bill payment on the internet",
+          "I have a parks and recreation fine that I would like to pay online",
+          "I have a parks and recreation fee that I would like to pay online",
+          "I have a parks and recreation bill that I would like to pay online",
+          "I have a parks and recreation penalty that I would like to pay online",
+          "I have parks and recreation fines that I would like to pay online",
+          "I have parks and recreation fees that I would like to pay online",
+          "I have parks and recreation bills that I would like to pay online",
+          "I have parks and recreation penalties that I would like to pay online",
+          "I have parks and recreation penalties that I would like to pay on the web",
+          "I have parks and recreation penalties that I would like to pay on the internet",
+          "I have parks and recreation fees that I would like to pay on the web",
+          "I have parks and recreation fees that I would like to pay on the internet",
+          "I have parks and recreation fines that I would like to pay on the web",
+          "I have parks and recreation fines that I would like to pay on the internet",
+          "I have parks and recreation bills that I would like to pay on the web",
+          "I have parks and recreation bills that I would like to pay on the internet",
+          "I have a parks and recreation fine that I would like to pay on the web",
+          "I have a parks and recreation fine that I would like to pay on the internet",
+          "I have a parks and recreation fee that I would like to pay on the internet",
+          "I have a parks and recreation fee that I would like to pay on the web",
+          "I have a parks and recreation bill that I would like to pay on the web",
+          "I have a parks and recreation bill that I would like to pay on the internet",
+          "I have a parks and recreation penalty that I would like to pay on the web",
+          "I have a parks and recreation penalty that I would like to pay on the internet",
+          "Online parks and recreation penalty payment assistance",
+          "Online parks and recreation bill payment assistance",
+          "Online parks and recreation fee payment assistance",
+          "Online parks and recreation fine payment assistance",
+          "Parks and recreation penalty payment assistance online",
+          "Parks and recreation penalty payment assistance on the web",
+          "Parks and recreation penalty payment assistance on the internet",
+          "Parks and recreation bill payment assistance online",
+          "Parks and recreation bill payment assistance on the web",
+          "Parks and recreation bill payment assistance on the internet",
+          "Parks and recreation fee payment assistance online",
+          "Parks and recreation fee payment assistance on the web",
+          "Parks and recreation fee payment assistance on the internet",
+          "Parks and recreation fine payment assistance online",
+          "Parks and recreation fine payment assistance on the web",
+          "Parks and recreation fine payment assistance on the internet",
+          "I have Parks and Recreation finds that I would like to pay on the Internet",
+          "I have Parks and Recreation finds that I would like to pay on the web",
+          "I have Parks and Recreation fees that I would like to pay on the Internet",
+          "I have Parks and Recreation fees that I would like to pay on the web",
+          "I have Parks and Recreation bills that I would like to pay on the Internet",
+          "I have Parks and Recreation bills that I would like to pay on the web",
+          "Pay parks online",
+          "Pay parks on the web",
+          "Pay parks on the internet"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "To pay your City of Phoenix parks and recreation bill online, follow the link, OnlineParks8693702296 https://apm.activecommunities.com/phoenix/Home"
+            }
+          ]
+        }
+      },
+      {
+        "name": "PayWater",
+        "version": "17",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Pay Water",
+          "Water payment",
+          "Water penalty",
+          "Water penalties",
+          "Water fee",
+          "Water fees",
+          "Water payments",
+          "Pay a water",
+          "Pay a water fine",
+          "I need to pay water",
+          "Assistance with water payment",
+          "Water fine",
+          "Water fines",
+          "Help me pay a water bill",
+          "I need to pay a water fee",
+          "Make a water payment",
+          "Is there a penalty for a late water payment",
+          "Pay for water",
+          "Pay a water penalty",
+          "Pay a water fee",
+          "Pay water fines",
+          "Pay water fees",
+          "Pay water penalties",
+          "Pay for a water penalty",
+          "Pay for a water fee",
+          "Pay for a water fine",
+          "Complete a water payment",
+          "Pay for water fines",
+          "Pay for water fees",
+          "Pay for water bills",
+          "Pay for water penalties",
+          "Need to pay water",
+          "Complete a payment for water",
+          "Make a payment for a water bill",
+          "Make a payment for a water fee",
+          "Make a payment for a water penalty",
+          "Make a payment for water penalties",
+          "Make a payment for water fees",
+          "Make a payment for water fines",
+          "Make a payment for water bills",
+          "I have a water payment that I need to make",
+          "I have a water payment that I want to make",
+          "I have a water payment that I would like to make",
+          "I have water payments that I need to make",
+          "I have water payments that I want to make",
+          "I have water payments that I would like to make",
+          "I have water payments that I would like to complete",
+          "I have water payments that I want to complete",
+          "I have water payments that I need to complete",
+          "I have a water payment that I need to complete",
+          "I have a water payment that I want to complete",
+          "I have a water payment that I would like to complete",
+          "Water payment assistance",
+          "Water bill payment assistance",
+          "Water fee payment assistance",
+          "Water fine payment assistance",
+          "Water penalty payment assistance",
+          "Assistance with water penalty payments",
+          "Assistance with water bill payments",
+          "Assistance with water fee payments",
+          "Assistance with water fine payments",
+          "Assistance with water payments"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Select one of the following:\",\"title\":\"Online or In-Person\",\"buttons\":[{\"text\":\"In-Person\",\"value\":\"InPW\"},{\"text\":\"Online\",\"value\":\"OW\"},{\"text\":\"On The Phone\",\"value\":\"WPhone\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Would you like to pay your City of Phoenix water bill online, in-person, or on the phone?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "OtherTrashQuestions",
+        "version": "26",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "OtherTr",
+          "Other Trash",
+          "Where do I put my garbage can",
+          "Can I put paint in my trash",
+          "Can I put bottles in trash",
+          "Can plastic go in the trash",
+          "Can metal go in trash",
+          "What can I put in the trash",
+          "What can I put in trash",
+          "What can go in trash",
+          "What can go in the trash",
+          "What items should not go in the trash",
+          "What items shouldn't go in trash",
+          "What if my trash is too full",
+          "What if trash is too full",
+          "I have too much trash",
+          "What items should not go in the garbage",
+          "What items shouldn't go in the garbage"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Follow the link, OtherTrash9722740958 https://www.phoenix.gov/publicworks for assistance regarding trash in the City of Phoenix."
+            }
+          ]
+        }
+      },
+      {
+        "name": "AllTrashServices",
+        "version": "4",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "TService",
+          "Trash Services"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Make a selection below to narrow you search:\",\"title\":\"Trash Services\",\"buttons\":[{\"text\":\"Trash Schedule\",\"value\":\"ST\"},{\"text\":\"Waste Containers\",\"value\":\"Waste Container\"},{\"text\":\"Other - Trash\",\"value\":\"OtherTr\"},{\"text\":\"Missed Collection\",\"value\":\"MissedC\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "I can assist you with trash pick-up, waste containers, other trash related items, and missed collections."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_PayTaxes",
+        "version": "23",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Pagar impuestos",
+          "Impuestos",
+          "Pago de impuestos",
+          "Pagos de impuestos",
+          "Sanciones fiscales",
+          "Penalización fiscal",
+          "Tasas fiscales",
+          "Pagar un impuesto",
+          "Tasa de impuestos",
+          "Hacer un pago de una multa fiscal",
+          "Multa fiscal",
+          "Multas fiscales",
+          "Necesito pagar impuestos ",
+          "Necesito hacer un pago tasa de impuestos",
+          "Necesito pagar un impuesto",
+          "Hacer un pago de impuestos",
+          "Hay una penalización por un pago atrasado de impuestos",
+          "Pagar las tasas fiscales",
+          "Pagar multas fiscales",
+          "Pagar las multas fiscales",
+          "Hacer un pago tasa de impuestos",
+          "Hacer un pago por la factura de impuestos",
+          "Hacer un pago por la multa fiscal",
+          "Necesidad de pagar impuestos",
+          "Hacer un pago por una factura de impuestos",
+          "Hacer un pago por una tasa de impuestos",
+          "Hacer un pago por multas fiscales",
+          "Hacer un pago por las tasas de impuestos",
+          "Tengo pagos de impuestos que quiero hacer",
+          "Tengo pagos de impuestos que necesito hacer",
+          "Tengo el pago de impuestos que quiero hacer",
+          "Tengo pagos de impuestos que me gustaría hacer",
+          "Tengo un pago de impuestos que necesito hacer",
+          "Tengo un pago de impuestos que quiero hacer",
+          "Tengo un pago de impuestos que me gustaría hacer",
+          "Asistencia con el pago de impuestos",
+          "Asistencia con el pago de facturas de impuestos",
+          "Asistencia con los pagos de tasas de impuestos",
+          "Asistencia con el pago de multas fiscales",
+          "Asistencia con pagos de penalización fiscal",
+          "Asistencia de pago de impuestos",
+          "Asistencia de pago de facturas de impuestos",
+          "Asistencia de pago de multas fiscales",
+          "Asistencia de pago de tasas de impuestos",
+          "Asistencia de pago por multas fiscales"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Seleccione una de las siguientes:\",\"title\":\"En Línea o En Persona\",\"buttons\":[{\"text\":\"En Línea\",\"value\":\"ILínea\"},{\"text\":\"En Persona\",\"value\":\"IPersona\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "¿Le gustaría pagar sus impuestos de la Ciudad de Phoenix en línea o en persona?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_OnlineLibrary",
+        "version": "22",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "BLínea",
+          "Me gustaría pagar mi factura de la biblioteca por internet",
+          "Pagar la cuenta de la biblioteca por internet",
+          "Pagar por mi factura de la biblioteca por internet",
+          "Cómo pago mi factura de la biblioteca por internet",
+          "Pagar por la biblioteca en el internet",
+          "Pagar la biblioteca por internet",
+          "Quiero hacer un pago de la biblioteca por internet",
+          "Cómo puedo hacer un pago de la biblioteca por internet",
+          "Quiero hacer un pago por la cuota de la biblioteca por internet",
+          "Quiero hacer un pago de una multa de la biblioteca por internet",
+          "Quiero hacer un pago de una cuota de la biblioteca por internet",
+          "Me gustaría pagar los cargos de la biblioteca por internet",
+          "Hacer un pago de la biblioteca por internet",
+          "Hacer un pago por la cuota de la biblioteca por internet",
+          "Multas de la biblioteca por internet",
+          "Cuotas de la biblioteca por internet",
+          "Pago de penalización de la biblioteca por internet",
+          "Hacer un pago de multas de la biblioteca por internet",
+          "Hacer un pago de las multas de la biblioteca por internet",
+          "Hacer un pago por la factura de la biblioteca por internet",
+          "Hacer un pago por la multa de la biblioteca por internet",
+          "Pagar la factura de la biblioteca por internet",
+          "Pagar la cuota de la biblioteca por internet",
+          "Pagar multas de la biblioteca por internet",
+          "Pagar sanciones de la biblioteca por internet",
+          "Puedo pagar la biblioteca por internet",
+          "Puedo pagar por la biblioteca por internet",
+          "Hacer un pago de penalización de la biblioteca por internet",
+          "Puedo hacer un pago de la biblioteca por internet",
+          "Hacer un pago de cuota de la biblioteca por internet",
+          "Hacer un pago de una multa de la biblioteca por internet",
+          "Hacer un pago de la factura de la biblioteca por internet",
+          "Hacer el pago de una factura de la biblioteca por internet",
+          "Tengo una multa de la biblioteca que me gustaría pagar por internet",
+          "Tengo una factura de la biblioteca que me gustaría pagar por internet",
+          "Tengo una cuota de la biblioteca que me gustaría pagar por internet",
+          "Tengo multas de la biblioteca que me gustaría pagar por internet",
+          "Tengo cuotas de la biblioteca que me gustaría pagar por internet",
+          "Tengo facturas de la biblioteca que me gustaría pagar por internet",
+          "Tengo sanciones de la biblioteca que me gustaría pagar por internet",
+          "Asistencia de pago de cuotas de la biblioteca por internet",
+          "Asistencia en pago de multas de la biblioteca por internet",
+          "Asistencia de pago de facturas de la biblioteca por internet",
+          "Asistencia con el pago de facturas de la biblioteca por internet",
+          "Asistencia de pago de multas de la biblioteca por internet",
+          "Biblioteca en linea"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Para pagar su factura de la biblioteca de Ciudad de Phoenix en línea, siga el enlace OnlineLibrary2511279041 http://www.phoenixpubliclibrary.org/ServicesForYou/Borrowing-Items/Pages/Library-Fees.aspx"
+            }
+          ]
+        }
+      },
+      {
+        "name": "InPersonTaxBill",
+        "version": "22",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "InPTx",
+          "Pay tax in person",
+          "Pay taxes in person",
+          "I would like to pay for my taxes in person",
+          "I would like to pay for my tax in person",
+          "How can I pay for my tax in person",
+          "I want to complete a tax payment in person",
+          "Make a tax payment in person",
+          "I would like to pay my taxes in person",
+          "I want to pay my taxes in person",
+          "Pay for taxes in person",
+          "Pay for a tax in person",
+          "Make a tax bill payment in person",
+          "Make a tax fee payment in person",
+          "Make a tax fine payment in person",
+          "Make a tax penalty payment in person",
+          "Complete a tax payment in person",
+          "Complete a tax bill payment in person",
+          "Complete a tax fee payment in person",
+          "Complete a tax fine payment in person",
+          "Complete a tax penalty payment in person",
+          "Pay for a tax bill in person",
+          "Pay for a tax fee in person",
+          "Pay for a tax fine in person",
+          "Pay for a tax penalty in person",
+          "Pay a tax penalty in person",
+          "Pay a tax fee in person",
+          "Pay a tax fine in person",
+          "Pay a tax bill in person",
+          "I have tax fees that I would like to pay in person",
+          "I have tax bills that I would like to pay in person",
+          "I have tax penalties that I would like to pay in person",
+          "I have a tax fee that I would like to pay in person",
+          "I have a tax bill that I would like to pay in person",
+          "I have a tax penalty that I would like to pay in person",
+          "I have tax fines that I would like to pay in person",
+          "I have a tax fine that I would like to pay in person",
+          "How can I pay for my taxes in person",
+          "In person tax"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "For information regarding paying taxes, follow the link, InPersonTax4917460796 https://www.phoenix.gov/finance/plt/contact-tax-and-license"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_PayCourt",
+        "version": "3",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Tribunal",
+          "Pagos de tribunal",
+          "Pagar honorarios judiciales",
+          "Pago judicial",
+          "Pagos judiciales",
+          "Tasas judiciales",
+          "Cuota judicial",
+          "Sanción judicial",
+          "Sanciones judiciales",
+          "Pagar un tribunal",
+          "Pagar una multa judicial",
+          "Multa judicial",
+          "Multas judiciales",
+          "Tengo un pago judicial que quiero completar",
+          "Tengo pagos judiciales que necesito hacer",
+          "Tengo pagos judiciales que me gustaría hacer",
+          "Tengo un pago judicial que necesito hacer",
+          "Tengo un pago judicial que me gustaría hacer",
+          "Realizar un pago por las sanciones judiciales",
+          "Hacer un pago por las facturas de la corte",
+          "Realizar un pago por multas judiciales",
+          "Realizar un pago por las tasas judiciales",
+          "Necesito pagar una cuota judicial",
+          "Realizar un pago judicial",
+          "Me gustaría hacer un pago judicial",
+          "Quiero pagar los honorarios de la corte",
+          "Quiero pagar una cuota judicial",
+          "Hay una penalización por una tarifa de la corte tardía",
+          "Tengo un pago judicial que necesito completar",
+          "Tengo pagos judiciales que quiero completar",
+          "Tengo pagos judiciales que me gustaría completar",
+          "Tengo pagos judiciales que necesito completar",
+          "Asistencia de pago de la corte",
+          "Asistencia para el pago de cuotas judiciales",
+          "Asistencia para el pago de facturas de la corte",
+          "Asistencia para el pago de multas de la corte",
+          "Asistencia de pago penal de la corte",
+          "Asistencia con los pagos judiciales",
+          "Asistencia con los pagos de cuotas judiciales",
+          "Asistencia con los pagos de multas judiciales",
+          "Asistencia con los pagos de boletos judiciales",
+          "Asistencia con los pagos de facturas judiciales"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Seleccione una de las siguientes:\",\"title\":\"En Persona o En Línea\",\"buttons\":[{\"text\":\"En Persona\",\"value\":\"TPersona\"},{\"text\":\"En Línea\",\"value\":\"TLínea\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "¿Le gustaría pagar su factura de cuota de la corte de la Ciudad de Phoenix en línea o en persona?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_PayWaterOnPhone",
+        "version": "5",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "ATeléfono",
+          "Pagar por el agua en el teléfono",
+          "Pagar sanciones por agua por teléfono",
+          "Pagar multas de agua por teléfono",
+          "Pagar las tarifas de agua por teléfono",
+          "Pagar las facturas de agua por teléfono",
+          "Pagar por una multa de agua por teléfono",
+          "Pagar por una multa de agua en el teléfono",
+          "Pagar por una tarifa de agua por teléfono",
+          "Pagar una factura de agua por teléfono",
+          "Pagar agua con un teléfono",
+          "Paga agua con mi teléfono",
+          "Pagar agua por teléfono",
+          "Pagar agua por telefono",
+          "Pagar agua por en telefono"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Para pagarle una factura de agua de la Ciudad de Phoenix por teléfono, por favor llame 602-262-6251 y decir 'Pago'."
+            }
+          ]
+        }
+      },
+      {
+        "name": "InPersonParkingBill",
+        "version": "20",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "InPPT",
+          "Pay parking ticket in person",
+          "Pay parking in person",
+          "How can I pay for my parking bill in person",
+          "I would like to pay for my parking bill in person",
+          "I would like to pay for my parking ticket in person",
+          "How can I pay for my parking ticket in person",
+          "I want to complete a parking payment in person",
+          "Make a parking ticket payment in person",
+          "Make a parking ticket bill payment in person",
+          "Make a parking ticket fee payment in person",
+          "Make a parking ticket fine payment in person",
+          "Make a parking ticket penalty payment in person",
+          "Pay for a parking ticket in person",
+          "Pay for a parking ticket bill in person",
+          "Pay for a parking ticket fine in person",
+          "Pay for a parking ticket fee in person",
+          "Pay for a parking ticket penalty in person",
+          "Pay for parking ticket fees in person",
+          "Pay for parking ticket fines in person",
+          "Pay for parking ticket penalties in person",
+          "Complete a parking ticket payment in person",
+          "Complete a parking ticket bill payment in person",
+          "Complete a parking ticket fee payment in person",
+          "Complete a parking ticket fine payment in person",
+          "Complete a parking ticket penalty payment in person",
+          "I have a parking ticket fee that I would like to pay in person",
+          "I have a parking ticket fine that I would like to pay in person",
+          "I have a parking ticket penalty that I would like to pay in person",
+          "I have a parking ticket bill that I would like to pay in person",
+          "I have parking ticket fines that I would like to pay in person",
+          "I have parking ticket bills that I would like to pay in person",
+          "I have parking ticket penalties that I would like to pay in person",
+          "I have parking ticket fees that I would like to pay in person",
+          "In person parking ticket penalty payment assistance",
+          "In person parking ticket bill payment assistance",
+          "In person parking ticket fee payment assistance",
+          "In person parking ticket fine payment assistance"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "For information regarding paying parking ticket bills, follow the link, InPersonParking7078055312 https://www.phoenix.gov/court/violations-complaints/parking-tickets"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_InPersonParksAndRec",
+        "version": "6",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "PRPersona",
+          "Pagar de los Parques y Recreación en persona",
+          "Pagar de los parques en persona",
+          "Cómo puedo pagar mi factura de los Parques y Recreación en persona",
+          "Cómo puedo pagar mis de los Parques y Recreación en persona",
+          "Me gustaría pagar mi factura de los Parques y Recreación en persona",
+          "Me gustaría pagar de los Parques y Recreación en persona",
+          "Parques en persona",
+          "Quiero hacer un pago de los Parques y Recreación en persona",
+          "Hacer un pago por la factura de los Parques y Recreación en persona",
+          "Hacer un pago por la cuota de los Parques y Recreación en persona",
+          "Hacer un pago de una multa de los Parques y Recreación en persona",
+          "Hacer un pago por la multa de los Parques y Recreación en persona",
+          "Pagar de los parques y facturas de recreación en persona",
+          "Pagar en persona de los parques y cuotas de recreación",
+          "Pagar en persona de los parques y multas de recreación",
+          "Pagar en persona de los parques y sanciones de recreación",
+          "Hacer el pago de una factura de los Parques y Recreación en persona",
+          "Hacer un pago de una cuota de los Parques y Recreación en persona",
+          "Hacer un pago de multas de los Parques y Recreación en persona",
+          "Hacer un pago de multa por de los Parques y Recreación en persona",
+          "Hacer un pago de los Parques y Recreación en persona",
+          "Hacer un pago de una factura de los Parques y Recreación en persona",
+          "Tengo facturas de los Parques y Recreación que me gustaría pagar en persona",
+          "Tengo multas de los Parques y Recreación que me gustaría pagar en persona",
+          "Tengo una multa de los Parques y Recreación que me gustaría pagar en persona",
+          "Tengo una penalización de los Parques y Recreación que me gustaría pagar en persona",
+          "Tengo cuotas de los parques de recreación que me gustaría pagar en persona",
+          "Tengo sanciones de los parques de recreación que me gustaría pagar en persona",
+          "Tengo una cuota de los Parques y Recreación que me gustaría pagar en persona",
+          "Asistencia de pago de multas de los Parques y Recreación en persona",
+          "Asistencia de pago de facturas de los Parques y Recreación en persona",
+          "Asistencia de pago de cuotas de los Parques y Recreación en persona",
+          "Asistencia de pago de multas en persona de los Parques y Recreación"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Para pagar una tarifa de parques y recreación en persona, visite 200 W. Washington, 16th Floor Phoenix, AZ 85003."
+            }
+          ]
+        }
+      },
+      {
+        "name": "PayParkingTickets",
+        "version": "16",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Parking ticket payment",
+          "Parking payment",
+          "Parking ticket payments",
+          "Parking payments",
+          "Parking ticket fees",
+          "Parking fee",
+          "Parking fees",
+          "Parking ticket penalty",
+          "Parking ticket penalties",
+          "Parking penalty",
+          "Parking penalties",
+          "Pay a parking ticket",
+          "Pay a parking fine",
+          "Pay parking",
+          "Parking ticket fine",
+          "Parking ticket fines",
+          "Make a parking ticket payment",
+          "I need to pay a parking ticket fee",
+          "I need to pay a parking fee",
+          "I need to pay a parking fees",
+          "Is there a penalty for a late parking ticket payment",
+          "Complete a parking ticket payment",
+          "Complete a parking payment",
+          "Complete a payment for a parking ticket",
+          "Complete a payment for parking tickets",
+          "Complete a payment for parking ticket fines",
+          "Complete a payment for parking ticket fees",
+          "Complete a payment for parking ticket penalties",
+          "Pay for a parking ticket",
+          "Pay for a parking ticket bill",
+          "Pay for a parking ticket fine",
+          "Pay for a parking ticket fee",
+          "Pay for a parking ticket penalty",
+          "Pay for parking ticket bills",
+          "Pay for parking ticket fees",
+          "Pay for parking ticket fines",
+          "Pay for parking ticket penalties",
+          "Make a payment for a parking ticket fee",
+          "Make a payment for a parking ticket fine",
+          "Make a payment for a parking ticket bill",
+          "Make a payment for a parking ticket penalty",
+          "Make a payment for parking ticket penalties",
+          "Make a payment for parking ticket fees",
+          "Make a payment for parking ticket bills",
+          "Make a payment for parking ticket fines",
+          "I have parking ticket payments that I need to make",
+          "I have parking ticket payments that I want to make",
+          "I have parking ticket payments that I would like to make",
+          "I have a parking ticket payment that I need to make",
+          "I have a parking ticket payment that I want to make",
+          "I have a parking ticket payment that I would like to make",
+          "I have a parking ticket payment that I want to complete",
+          "I have a parking ticket payment that I need to complete",
+          "I have a parking ticket payment that I would like to complete",
+          "I have parking ticket payments that I want to complete",
+          "I have parking ticket payments that I need to complete",
+          "I have parking ticket payments that I would like to complete",
+          "Assistance with parking ticket payments",
+          "Assistance with parking ticket bill payments",
+          "Assistance with parking ticket fee payments",
+          "Assistance with parking ticket fine payments",
+          "Assistance with parking ticket penalty payments",
+          "Parking ticket penalty payment assistance",
+          "Parking ticket bill payment assistance",
+          "Parking ticket fee payment assistance",
+          "Parking ticket fine payment assistance",
+          "Parking ticket payment assistance"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Select one of the following:\",\"title\":\"Pay Online or In-Person\",\"buttons\":[{\"text\":\"In-Person\",\"value\":\"InPPT\"},{\"text\":\"Online\",\"value\":\"OPT\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Would you like to pay your City of Phoenix parking ticket bill online or in-person?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "BotHelp",
+        "version": "5",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Help",
+          "Help me"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "If you are having technical issues, please contact information technology support at 602-262-4481. If you need additional help, please contact the City Of Phoenix general assistance line at 602-262-6011."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_PayWater",
+        "version": "12",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Pagar por el agua",
+          "Pago por el agua",
+          "Cuota por el agua",
+          "Gastos por el agua",
+          "Multa por el agua",
+          "Pagos por el agua",
+          "Hacer un pago de una multa por el agua",
+          "Necesito pagar por el agua",
+          "Asistencia con el pago del agua",
+          "Ayúdame a hacer un pago por la factura del agua",
+          "Necesito hacer un pago por la cuota del agua",
+          "Hacer un pago por el agua",
+          "Hay una penalización por un pago atrasado del agua",
+          "Pagar multas por el agua",
+          "Pagar las tasas por el agua",
+          "Pagar por una multa por el agua",
+          "Hacer un pago por la cuota por el agua",
+          "Pagar las facturas por el agua",
+          "Pagar las multas por el agua",
+          "Necesidad de pagar agua",
+          "Hacer un pago por una factura por el agua",
+          "Hacer un pago por una cuota por el agua",
+          "Hacer un pago por una multa por el agua",
+          "Hacer un pago por las multas por el agua",
+          "Hacer un pago por multas por el agua",
+          "Hacer un pago por las cuotas por el agua",
+          "Hacer un pago por las facturas por el agua",
+          "Tengo un pago por el agua que necesito hacer",
+          "Tengo un pago por el agua que quiero hacer",
+          "Tengo un pago por el agua que me gustaría hacer",
+          "Tengo pagos por el agua que necesito hacer",
+          "Tengo pagos por el agua que quiero hacer",
+          "Tengo pagos por el agua que me gustaría hacer",
+          "Asistencia de pago por el agua",
+          "Asistencia de pago de facturas por el agua",
+          "Asistencia de pago de tasas por el agua",
+          "Asistencia de pago de multas por el agua",
+          "Asistencia de pago por multas por el agua",
+          "Asistencia con pagos de multas por el agua",
+          "Asistencia con los pagos de multas por el agua",
+          "Asistencia con los pagos de las tasas por el agua",
+          "Asistencia con los pagos de facturas por el agua",
+          "Asistencia con los pagos por el agua",
+          "Pagar agua",
+          "Agua fina"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Seleccione una de las siguientes:\",\"title\":\"En Persona o En Línea\",\"buttons\":[{\"text\":\"En Persona\",\"value\":\"APersona\"},{\"text\":\"En Línea\",\"value\":\"ALínea\"},{\"text\":\"Por Teléfono\",\"value\":\"ATeléfono\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "¿Le gustaría pagar su factura de agua de la ciudad de Phoenix en línea, en persona, o por teléfono?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "HazardousWaste",
+        "version": "20",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Hazardous waste",
+          "HW",
+          "Help with hazardous waste",
+          "Are cleaning products hazardous waste",
+          "What chemicals are considered hazardous waste",
+          "What is considered hazardous waste",
+          "What are hazardous waste items",
+          "Where do hazardous waste items go",
+          "Where does hazardous waste go",
+          "Hazardous",
+          "What items are hazardous waste",
+          "What items are considered hazardous waste",
+          "Is paint considered hazardous waste",
+          "Are chemicals considered hazardous waste",
+          "What is hazardous",
+          "How do I dispose of hazardous waste",
+          "How do I get rid of hazardous waste",
+          "I want help with hazardous waste",
+          "I need help with hazardous waste",
+          "I need assistance with hazardous waste",
+          "I want more information about hazardous waste",
+          "Information about hazardous waste",
+          "Can you help me find information about hazardous waste",
+          "Can you help me get information about hazardous waste",
+          "How to get rid of hazardous waste",
+          "I need hazardous waste information",
+          "I want questions answered regarding hazardous waste",
+          "I want questions answered about hazardous waste",
+          "I am requesting assistance with hazardous waste",
+          "I would like to request assistance with hazardous waste",
+          "Hazardous waste assistance"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Follow the link, HazardousLink7300503163 https://www.phoenix.gov/publicworks/hhw for assistance regarding hazardous waste in the City of Phoenix."
+            }
+          ]
+        }
+      },
+      {
+        "name": "InPersonParksAndRecBill",
+        "version": "17",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "InPPR",
+          "Pay parks and recreation in person",
+          "Pay parks in person",
+          "Pay parks and rec in person",
+          "How can I pay for my parks and recreation bill in person",
+          "How can I pay for my parks and rec bill in person",
+          "I would like to pay for my parks and recreation bill in person",
+          "I would like to pay for my parks and rec bill in person",
+          "Parks in person",
+          "I want to complete a parks and recreation payment in person",
+          "Make a parks and recreation payment in person",
+          "Pay a parks and recreation bill in person",
+          "Pay a parks and recreation fee in person",
+          "Pay a parks and recreation fine in person",
+          "Pay a parks and recreation penalty in person",
+          "Pay parks and recreation bills in person",
+          "Pay parks and recreation fees in person",
+          "Pay parks and recreation fines in person",
+          "Pay parks and recreation penalties in person",
+          "Make a parks and recreation bill payment in person",
+          "Make a parks and recreation fee payment in person",
+          "Make a parks and recreation fine payment in person",
+          "Make a parks and recreation penalty payment in person",
+          "Complete a parks and recreation payment in person",
+          "Complete a parks and recreation bill payment in person",
+          "Complete a parks and recreation fee payment in person",
+          "Complete a parks and recreation fine payment in person",
+          "Complete a parks and recreation penalty payment in person",
+          "I have parks and recreation fines that I would like to pay in person",
+          "I have parks and recreation bills that I would like to pay in person",
+          "I have parks and recreation penalties that I would like to pay in person",
+          "I have a parks and recreation fine that I would like to pay in person",
+          "I have a parks and recreation bill that I would like to pay in person",
+          "I have a parks and recreation penalty that I would like to pay in person",
+          "I have parks and recreation fees that I would like to pay in person",
+          "I have a parks and recreation fee that I would like to pay in person",
+          "In person parks and recreation penalty payment assistance",
+          "In person parks and recreation bill payment assistance",
+          "In person parks and recreation fee payment assistance",
+          "In person parks and recreation fine payment assistance"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "To pay a parks and recreation fee in-person, visit 200 W. Washington, 16th Floor Phoenix, AZ 85003."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_BotHelp",
+        "version": "4",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Ayuda"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Si tiene problemas técnicos, póngase en contacto con el servicio de asistencia de tecnología de la información en 602-262-4481. Si necesita ayuda adicional, comuníquese con la línea de asistencia general de Ciudad de Phoenix al 602-262-6011."
+            }
+          ]
+        }
+      },
+      {
+        "name": "PayTaxes",
+        "version": "13",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Pay Taxes",
+          "Tax",
+          "Tax payment",
+          "Tax payments",
+          "Tax penalty",
+          "Tax penalties",
+          "Tax fees",
+          "Tax fee",
+          "Pay a tax",
+          "Pay a tax fine",
+          "Tax fine",
+          "Tax fines",
+          "I need to pay a taxes",
+          "I need to pay a tax fee",
+          "I need to pay a tax",
+          "Make a tax payment",
+          "Is there a penalty for a late tax payment",
+          "Complete a tax payment",
+          "Pay for taxes",
+          "Pay for tax fees",
+          "Pay for tax fines",
+          "Pay for tax penalties",
+          "Pay for a tax penalty",
+          "Pay for a tax fine",
+          "Pay for a tax fee",
+          "Pay a tax fee",
+          "Pay a tax bill",
+          "Pay a tax penalty",
+          "Need to pay taxes",
+          "Complete a payment for taxes",
+          "Make a payment for a tax bill",
+          "Make a payment for a tax fee",
+          "Make a payment for a tax fine",
+          "Make a payment for a tax penalty",
+          "Make a payment for tax penalties",
+          "Make a payment for tax fees",
+          "Make a payment for tax fines",
+          "I have tax payments that I need to make",
+          "I have tax payments that I want to make",
+          "I have tax payments that I would like to make",
+          "I have a tax payment that I need to make",
+          "I have a tax payment that I want to make",
+          "I have a tax payment that I would like to make",
+          "I have a tax payment that I need to complete",
+          "I have a tax payment that I want to complete",
+          "I have a tax payment that I would like to complete",
+          "I have tax payments that I need to complete",
+          "I have tax payments that I want to complete",
+          "I have tax payments that I would like to complete",
+          "Assistance with tax payments",
+          "Assistance with tax bill payments",
+          "Assistance with tax fee payments",
+          "Assistance with tax fine payments",
+          "Assistance with tax penalty payments",
+          "Tax payment assistance",
+          "Tax bill payment assistance",
+          "Tax fine payment assistance",
+          "Tax fee payment assistance",
+          "Tax penalty payment assistance"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Select one of the following:\",\"title\":\"Online or In-Person\",\"buttons\":[{\"text\":\"In-Person\",\"value\":\"InPTx\"},{\"text\":\"Online\",\"value\":\"OTx\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Would you like to pay your City of Phoenix taxes online or in-person?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_Recycling",
+        "version": "12",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Reciclaje",
+          "Reemplazo de una papelera de reciclaje",
+          "Qué puedo reciclar",
+          "Reciclar",
+          "Ayuda con el reciclaje",
+          "Es reciclable de metal",
+          "Se pueden reciclar las cajas",
+          "Se puede reciclar el plástico",
+          "Tengo una pregunta sobre el reciclaje",
+          "Tengo preguntas sobre el reciclaje",
+          "Lo que se considera reciclable",
+          "Por qué no se recogió mi reciclaje",
+          "Cómo debo reciclar",
+          "Lo que se puede reciclar",
+          "Puedo reciclar cartón",
+          "Cómo reciclar",
+          "Qué reciclar",
+          "Necesito ayuda con el reciclaje",
+          "A dónde va el reciclaje",
+          "Quiero reciclar",
+          "Necesito que me recojan el reciclaje",
+          "Qué día se recoge el reciclaje",
+          "Cuándo es el día del reciclaje",
+          "Cuándo se recoge el reciclaje",
+          "Dónde pongo que mi poder de reciclaje",
+          "Dónde pongo mi papelera de reciclaje",
+          "Reemplazar una lata de reciclaje",
+          "Necesito reemplazar una recipiente de reciclaje",
+          "Necesito que sea remplazado un recipiente de reciclaje",
+          "Quiero que se respondan preguntas sobre el reciclaje",
+          "Estoy solicitando ayuda con el reciclaje",
+          "Me gustaría solicitar ayuda con el reciclaje",
+          "Asistencia con el reciclaje",
+          "Asistencia para reciclaje"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Sigue el enlace, Recycling8279017093 https://www.phoenix.gov/publicworks/residential-recycling para asistencia con respecto al reciclaje en la Ciudad de Phoenix."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_TrashQuestions",
+        "version": "18",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Basura",
+          "Desperdicios",
+          "Ayuda con respecto a la basura",
+          "Tengo una pregunta sobre la basura",
+          "Necesito ayuda con la basura",
+          "Tengo preguntas sobre la basura",
+          "Ayuda con la basura",
+          "Ayúdeme con la basura",
+          "Preguntas sobre la basura",
+          "Pregunta sobre la basura",
+          "Quiero que se respondan preguntas sobre la basura",
+          "Necesito información basura",
+          "Necesito información sobre la basura",
+          "Necesito respuestas a mis preguntas sobre la basura",
+          "Necesito que mis preguntas sobre la basura sean contestadas",
+          "Puedo obtener ayuda con la basura",
+          "Puede ayudarme con la basura",
+          "Me gustaría solicitar ayuda con la basura",
+          "Estoy solicitando ayuda con la basura",
+          "Asistencia con la basura",
+          "Asistencia a la basura",
+          "Necesito más información sobre la basura"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Seleccione uno de los siguientes temas relacionados con la papelera:\",\"title\":\"Trash Services - Spanish\",\"buttons\":[{\"text\":\"Servicios de Basura\",\"value\":\"BServicios\"},{\"text\":\"Basura en Volumen\",\"value\":\"BVolumen\"},{\"text\":\"Residuos Peligrosos\",\"value\":\"ResP\"},{\"text\":\"Reciclaje\",\"value\":\"Reciclaje\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Haga una selección a continuación para limitar su búsqueda de servicios de basura."
+            }
+          ]
+        }
+      },
+      {
+        "name": "OnlineWaterBill",
+        "version": "12",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "OW",
+          "How can I pay for my water bill online",
+          "How can I pay for my water online",
+          "I would like to pay for my water bill online",
+          "I would like to pay for my water online",
+          "I want to pay for my water fee online",
+          "I want to complete a water payment online",
+          "Make a water payment online",
+          "I would like to pay water charges online",
+          "I want to pay water fees online",
+          "I want to pay a water penalty online",
+          "I want to pay a water fine online",
+          "How do I complete a water payment online",
+          "I want to pay for my water online",
+          "Make a water payment on the web",
+          "Pay a water bill on the web",
+          "Pay a water bill online",
+          "Pay water on the web",
+          "Pay water online",
+          "Pay a water fee online",
+          "Pay a water fee on the web",
+          "Pay a water fine on the web",
+          "Pay a water fine online",
+          "Pay a water penalty online",
+          "Pay a water penalty on the web",
+          "Pay a water bill on the internet",
+          "Pay water fees on the internet",
+          "Pay a water fee on the internet",
+          "Pay water on the internet",
+          "Pay a water fine on the internet",
+          "Make a water payment on the internet",
+          "Pay a water penalty on the internet",
+          "Can I pay for water online",
+          "Can I pay for water on the web",
+          "Can I pay for water on the internet",
+          "Can I make a water payment online",
+          "Can I make a water payment on the web",
+          "Can I make a water payment on the internet",
+          "Make a water fee payment online",
+          "Make a water fee payment on the web",
+          "Make a water fee payment on the internet",
+          "Make a water fine payment online",
+          "Make a water fine payment on the web",
+          "Make a water fine payment on the internet",
+          "Make a water penalty payment online",
+          "Make a water penalty payment on the web",
+          "Make a water penalty payment on the internet",
+          "Make a water bill payment online",
+          "Make a water bill payment on the web",
+          "Make a water bill payment on the internet",
+          "I have water fines that I would like to pay online",
+          "I have water fines that I would like to pay on the web",
+          "I have water fines that I would like to pay on the internet",
+          "I have water fees that I would like to pay online",
+          "I have water fees that I would like to pay on the web",
+          "I have water fees that I would like to pay on the internet",
+          "I have water bills that I would like to pay online",
+          "I have water bills that I would like to pay on the internet",
+          "I have water bills that I would like to pay on the web",
+          "I have water penalties that I would like to pay online",
+          "I have water penalties that I would like to pay on the web",
+          "I have water penalties that I would like to pay on the internet",
+          "I have a water penalty that I would like to pay online",
+          "I have a water penalty that I would like to pay on the web",
+          "I have a water penalty that I would like to pay on the internet",
+          "I have a water bill that I would like to pay online",
+          "I have a water bill that I would like to pay on the web",
+          "I have a water bill that I would like to pay on the internet",
+          "I have a water fee that I would like to pay online",
+          "I have a water fee that I would like to pay on the web",
+          "I have a water fee that I would like to pay on the internet",
+          "I have a water fine that I would like to pay online",
+          "I have a water fine that I would like to pay on the web",
+          "I have a water fine that I would like to pay on the internet",
+          "Online water penalty payment assistance",
+          "Online water bill payment assistance",
+          "Online water fee payment assistance",
+          "Online water fine payment assistance",
+          "Water penalty payment assistance online",
+          "Water penalty payment assistance on the web",
+          "Water penalty payment assistance on the internet",
+          "Water bill payment assistance online",
+          "Water bill payment assistance on the web",
+          "Water bill payment assistance on the internet",
+          "Water fee payment assistance online",
+          "Water fee payment assistance on the web",
+          "Water fee payment assistance on the internet",
+          "Water fine payment assistance online",
+          "Water fine payment assistance on the web",
+          "Water fine payment assistance on the internet"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "To pay your City of Phoenix water bill online, follow the link, OnlineWater6426512734 https://paycityservices.phoenix.gov/"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_InitialConnection",
+        "version": "1",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Hola",
+          "Oye",
+          "Casa",
+          "Hogar"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"*Actualmente se incluye agua, basura y pagos*\",\"title\":\"Main Menu - Spanish\",\"buttons\":[{\"text\":\"Agua\",\"value\":\"Agua\"},{\"text\":\"Basura\",\"value\":\"Basura\"},{\"text\":\"Pagos\",\"value\":\"Pagos\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "¿Con qué servicio de la ciudad puedo ayudarle hoy?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_WaterQuestions",
+        "version": "11",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Cómo empiezo los servicios para recibir agua",
+          "Necesito agua",
+          "Agua",
+          "Ayuda con respecto al agua",
+          "Ayuda con el agua",
+          "Hay algo mal con por el agua",
+          "Quiero transferir mi servicio del agua",
+          "Tengo un problema con por el agua",
+          "Por qué me quedo sin agua",
+          "De dónde viene el agua de la Ciudad de Phoenix",
+          "Quiero apagar el agua",
+          "Está limpia el agua de la Ciudad de Phoenix",
+          "Tengo preguntas sobre el agua",
+          "Tengo una pregunta sobre el agua",
+          "Pregunta sobre el agua",
+          "Preguntas sobre el agua",
+          "Preguntas por el agua",
+          "Quiero información sobre los servicios del agua",
+          "Quiero información sobre el agua",
+          "Ayúdame con el agua",
+          "Obtener ayuda con el agua",
+          "Asistencia con el agua",
+          "Necesito agua en mi casa",
+          "Necesito servicios con el agua",
+          "Necesito servicio con el agua",
+          "Necesito detener mis servicios del agua",
+          "Necesito transferir mis servicios del agua",
+          "Necesito ayuda con mis servicios del agua",
+          "Servicios de transferencia del agua",
+          "Iniciar servicios del agua",
+          "Detener los servicios del agua",
+          "Quiero que se respondan preguntas sobre el agua",
+          "Quiero ayuda con el agua",
+          "Puedo obtener ayuda con los servicios por el agua",
+          "Puede ayudarme con los servicios del agua",
+          "Quiero ayuda con los servicios del agua",
+          "Necesito ayuda con los servicios del agua",
+          "Estoy solicitando ayuda con el agua",
+          "Me gustaría solicitar ayuda con el agua"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Siga el enlace, WaterLink8120117412 https://phxatyourservice.dynamics365portals.us/sstwaterservice/?stepid=bbaa1236-6cb0-e711-8115-1458d04e2938&sessionid=9f5836dc-720e-eb11-a813-001dd8018831 para preguntas sobre agua en la Ciudad de Phoenix."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Payments",
+        "version": "17",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Payments",
+          "Pay",
+          "Payment",
+          "Do you take credit cards",
+          "Fines",
+          "Fine",
+          "Fee",
+          "Fees",
+          "Penalty",
+          "Penalties",
+          "Help with payments",
+          "I have questions about payments",
+          "I have a question about payments",
+          "Do you take cash payments",
+          "Do you take credit card payments",
+          "Do you accept credit cards",
+          "Do you accept credit card payments",
+          "Can I pay with a credit card",
+          "Complete a payment",
+          "Complete payments",
+          "Make a payment",
+          "Make payments",
+          "I need to pay",
+          "I want to pay",
+          "Pay for",
+          "Can you charge me for",
+          "Charge me for",
+          "I have a payment that I would like to make",
+          "I have a payment that I need to make",
+          "I have a payment that I want to make",
+          "I have a payment that I want to complete",
+          "I have a payment that I need to complete",
+          "I have a payment that I would like to complete",
+          "I am requesting assistance with payments",
+          "I would like to request assistance with payments",
+          "Penalty payment assistance",
+          "Fine payment assistance",
+          "Fee payment assistance",
+          "Bill payment assistance",
+          "Payment assistance",
+          "Assistance with payments",
+          "Assistance with bill payments",
+          "Assistance with fee payments",
+          "Assistance with fine payments",
+          "Assistance with penalty payments"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Which city service would you like to complete a payment for? You can enter \"Pay Water\", \"Pay Library\", \"Pay Parking\", \"Pay Parks and Recreation\", \"Pay Court\", or \"Pay Taxes\"."
+            }
+          ]
+        }
+      },
+      {
+        "name": "InPersonLibraryBill",
+        "version": "17",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "InPL",
+          "Pay library in person",
+          "I would like to pay for my library fee in person",
+          "How can I pay for my library fee in person",
+          "How can I pay for my library bill in person",
+          "I would like to pay for my library bill in person",
+          "I want to complete a library payment in person",
+          "I want to make a library payment in person",
+          "I want to pay a library fine in person",
+          "I want to pay a library fee in person",
+          "I want to pay library fees in person",
+          "I would like to pay library penalties in person",
+          "Make a library payment in person",
+          "Make a library fee payment in person",
+          "Make a library fine payment in person",
+          "Make a library penalty payment in person",
+          "Make a payment for library bills in person",
+          "Make a payment for library fees in person",
+          "Make a payment for library fines in person",
+          "Make a payment for library penalties in person",
+          "Pay for a library bill in person",
+          "Pay for a library fee in person",
+          "Pay for a library fine in person",
+          "Pay for a library penalty in person",
+          "Pay for library fees in person",
+          "Pay for library fines in person",
+          "Pay for library penalties in person",
+          "Complete a payment for a library bill in person",
+          "Complete a payment for a library fee in person",
+          "Complete a payment for a library fine in person",
+          "Complete a payment for a library penalty in person",
+          "I have library fees that I would like to pay in person",
+          "I have library fines that I would like to pay in person",
+          "I have library penalties that I would like to pay in person",
+          "I have library bills that I would like to pay in person",
+          "I have a library fine that I would like to pay in person",
+          "I have a library bill that I would like to pay in person",
+          "I have a library penalty that I would like to pay in person",
+          "I have a library fee that I would like to pay in person",
+          "In person library penalty payment assistance",
+          "In person library fee payment assistance",
+          "In person library fine payment assistance",
+          "In person library bill payment assistance"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "*COVID-19 has suspended payments on late fees for library charges. This is subject to change.*"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_OtherBulkTrashQuestions",
+        "version": "9",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "OtrasBV",
+          "Qué puedo poner en mi basura en volumen",
+          "Puedo poner un sofá en la basura en volumen",
+          "Puedo poner muebles en la basura en volumen",
+          "Es una mesa considerada basura en volumen",
+          "A dónde va la basura en volumen",
+          "Pongo mi basura en volumen en la acera",
+          "Pongo mi basura en volumen en la calle",
+          "Es un neumático considerado un artículo de basura en volumen",
+          "Puedo poner una silla en la basura en volumen",
+          "Lo que puede ir en la basura en volumen",
+          "Lo que se considera basura en volumen",
+          "Qué artículos puedo poner en la basura en volumen",
+          "Mi basura en volumen ir en la carretera o entrada",
+          "Qué artículos se consideran basura en volumen"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Sigue el enlace, OtherBulk7073476559 https://www.phoenix.gov/publicworks/bulktrash para asistencia con respecto a la basura en volumen en la Ciudad de Phoenix."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_WasteContainerRequests",
+        "version": "10",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "ContenedorR",
+          "Envase de residuous",
+          "Cómo reemplazar una papelera",
+          "Cómo puedo conseguir un nuevo cubo de basura",
+          "Cómo puedo conseguir un nuevo cubo de residuos",
+          "Necesito un nuevo cubo de basura",
+          "Necesito un nuevo cubo de residuous",
+          "Dónde puedo conseguir un nuevo cubo de basura",
+          "Dónde puedo conseguir un nuevo cubo de residuous",
+          "Cómo obtener un nuevo cubo de basura",
+          "Cómo obtener un nuevo cubo de residuous",
+          "Sustitución de un cubo de basura",
+          "Sustitución de un cubo de residuous",
+          "Quiero reemplazar mi cubo de basura",
+          "Quiero reemplazar mi cubo de residuous",
+          "Cómo puedo conseguir un nuevo cubo de desperdicios",
+          "Falta mi cubo de basura"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Para preguntas sobre los contenedores de residuos o su sustitución, siga el enlace WasteContainer5956239438 https://phxatyourservice.dynamics365portals.us/solidwastecontainer/?stepid=30d4ffda-6bb3- e711-8117-1458d04eaba0&sessionid=4ce77644-d8f9-ea11-a813-001dd8018230"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_InPersonTax",
+        "version": "24",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "IPersona",
+          "Pagar impuestos en persona",
+          "Me gustaría pagar mi impuesto en persona",
+          "Cómo puedo pagar mi impuesto en persona",
+          "Cómo puedo pagar mis impuestos en persona",
+          "Quiero hacer un pago de impuestos en persona",
+          "Hacer un pago de impuestos en persona",
+          "Me gustaría pagar mis impuestos en persona",
+          "Quiero pagar mis impuestos en persona",
+          "Pagar los impuestos en persona",
+          "Pagar un impuesto en persona",
+          "Hacer un pago de factura de impuestos en persona",
+          "Hacer un pago de multa de impuestos en persona",
+          "Hacer un pago de multa fiscal en persona",
+          "Hacer una multa de impuestos en persona",
+          "Hacer un pago por la multa fiscal en persona",
+          "Hacer un pago tasa de impuestos en persona",
+          "Hacer un pago de una multa fiscal en persona",
+          "Hacer un pago por la factura de impuestos en persona",
+          "Tengo tasas de impuestos que me gustaría pagar en persona",
+          "Tengo multas fiscales que me gustaría pagar en persona",
+          "Tengo sanciones fiscales que me gustaría pagar en persona",
+          "Tengo facturas de impuestos que me gustaría pagar en persona",
+          "Tengo una tasa de impuestos que me gustaría pagar en persona",
+          "Tengo una multa fiscal que me gustaría pagar en persona",
+          "Tengo una factura de impuestos que me gustaría pagar en persona",
+          "Tengo una multa de impuestos que me gustaría pagar en persona"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Para obtener información sobre el pago de los impuestos en persona, siga el enlace InPersonTax1564314502 https://www.phoenix.gov/finance/plt/contact-tax-and-license"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_AllTrashServices",
+        "version": "3",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "BServicios",
+          "Servicios de basura"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Haga una selección a continuación para restringir la búsqueda:\",\"title\":\"Servicios De Basura\",\"buttons\":[{\"text\":\"Horario de Basura\",\"value\":\"HBasura\"},{\"text\":\"Otras - Basura\",\"value\":\"OBasura\"},{\"text\":\"Contenedor de Residuos\",\"value\":\"ContenedorR\"},{\"text\":\"Colección Perdida\",\"value\":\"CPerdida\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "¿Quieres ayuda con la basura, los contenedores de residuos u otros artículos relacionados con la basura?"
+            }
+          ]
+        }
+      },
+      {
+        "rejectionStatement": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Ok, please enter 'Water In-Person' to enter your correct address."
+            }
+          ]
+        },
+        "name": "InPersonWaterBill",
+        "version": "22",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:653928118540:function:waterpay-dev-waterpay",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "InPW",
+          "I would like to pay for my water bill in person",
+          "Pay for water bill in person",
+          "Water bill in person",
+          "How can I pay for my water bill in person",
+          "Pay water bill in person",
+          "Water in person",
+          "I want to complete a water payment in person",
+          "Make a water payment in person",
+          "Make a water bill payment in person",
+          "Make a water fee payment in person",
+          "Make a water fine payment in person",
+          "Make a water penalty payment in person",
+          "Pay for water fees in person",
+          "Pay for water fines in person",
+          "Pay for water bills in person",
+          "Pay for water penalties in person",
+          "Pay for water in person",
+          "I want to pay for water in person",
+          "I need to pay for water in person",
+          "How to pay for water in person",
+          "How to pay a water bill in person",
+          "How to pay a water fee in person",
+          "How to pay a water fine in person",
+          "How to pay a water payment in person",
+          "Complete a water payment in person",
+          "Complete a water bill payment in person",
+          "Complete a water penalty payment in person",
+          "Complete a water fine payment in person",
+          "Complete a water fee payment in person",
+          "Pay for a water bill in person",
+          "Pay for a water fee in person",
+          "Pay for a water fine in person",
+          "Pay for a water penalty in person",
+          "I have a water fee that I would like to pay in person",
+          "I have a water bill that I would like to pay in person",
+          "I have a water penalty that I would like to pay in person",
+          "I have water fees that I would like to pay in person",
+          "I have water bills that I would like to pay in person",
+          "I have water penalties that I would like to pay in person",
+          "I have water fines that I would like to pay in person",
+          "I have a water fine that I would like to pay in person",
+          "In person water penalty payment assistance",
+          "In person water bill payment assistance",
+          "In person water fee payment assistance",
+          "In person water fine payment assistance"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.PostalAddress",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "To pay your City of Phoenix water bill in-person, please enter your residential address:"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "UserAddress"
+          }
+        ],
+        "confirmationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Can you confirm that your current residential address is {UserAddress}? Say 'Yes' to confirm. Once confirmed, I may take a few seconds to retrieve the answer for you."
+            }
+          ],
+          "maxAttempts": 3
+        },
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "*In-Person Water Payment Information After Entering Address - https://www.phoenix.gov/waterservices/customerservices/payment-services/bplocations *"
+            }
+          ]
+        }
+      },
+      {
+        "name": "OnlineTaxBill",
+        "version": "17",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "OTx",
+          "How can I pay for my taxes online",
+          "How can I pay for my tax online",
+          "I would like to pay for my tax online",
+          "I would like to pay for my taxes online",
+          "I want to complete a tax payment online",
+          "Make a tax payment online",
+          "I want to pay for my tax fee online",
+          "Pay taxes online",
+          "Pay taxes on the web",
+          "Make a tax payment on the web",
+          "Pay a tax on the web",
+          "Pay a tax online",
+          "Pay a tax fee online",
+          "Pay a tax fee on the web",
+          "Pay a tax fine on the web",
+          "Pay a tax fine online",
+          "Pay a tax penalty online",
+          "Pay a tax penalty on the web",
+          "Make tax payments online",
+          "Make tax payments on the web",
+          "Make a tax payment on the internet",
+          "Make tax payments on the internet",
+          "Pay a tax on the internet",
+          "Pay taxes on the internet",
+          "Pay a tax fee on the internet",
+          "Pay tax fees on the internet",
+          "Pay a tax penalty on the internet",
+          "Pay tax penalties on the internet",
+          "Pay a tax fine on the internet",
+          "Pay tax fines on the internet",
+          "Can I pay for taxes online",
+          "Can I pay for taxes on the web",
+          "Can I pay for taxes on the internet",
+          "Can I make a tax payment online",
+          "Can I make a tax payment on the web",
+          "Can I make a tax payment on the internet",
+          "Make a tax penalty payment online",
+          "Make a tax penalty payment on the web",
+          "Make a tax penalty payment on the internet",
+          "Make a tax fee payment online",
+          "Make a tax fee payment on the web",
+          "Make a tax fee payment on the internet",
+          "Make a tax fine payment online",
+          "Make a tax fine payment on the web",
+          "Make a tax fine payment on the internet",
+          "Make a tax bill payment online",
+          "Make a tax bill payment on the web",
+          "Make a tax bill payment on the internet",
+          "I have a tax bill that I would like to pay online",
+          "I have a tax bill that I would like to pay on the web",
+          "I have a tax bill that I would like to pay on the internet",
+          "I have a tax fee that I would like to pay online",
+          "I have a tax fee that I would like to pay on the web",
+          "I have a tax fee that I would like to pay on the internet",
+          "I have a tax fine that I would like to pay online",
+          "I have a tax fine that I would like to pay on the web",
+          "I have a tax fine that I would like to pay on the internet",
+          "I have a tax penalty that I would like to pay online",
+          "I have a tax penalty that I would like to pay on the web",
+          "I have a tax penalty that I would like to pay on the internet",
+          "I have tax penalties that I would like to pay online",
+          "I have tax penalties that I would like to pay on the web",
+          "I have tax penalties that I would like to pay on the internet",
+          "I have tax bills that I would like to pay online",
+          "I have tax bills that I would like to pay on the internet",
+          "I have tax bills that I would like to pay on the web",
+          "I have tax fees that I would like to pay online",
+          "I have tax fees that I would like to pay on the web",
+          "I have tax fees that I would like to pay on the internet",
+          "I have tax fines that I would like to pay online",
+          "I have tax fines that I would like to pay on the web",
+          "I have tax fines that I would like to pay on the internet",
+          "Online tax penalty payment assistance",
+          "Online tax bill payment assistance",
+          "Online tax fee payment assistance",
+          "Online tax fine payment assistance",
+          "Tax fine payment assistance online",
+          "Tax fine payment assistance on the web",
+          "Tax fine payment assistance on the internet",
+          "Tax fee payment assistance online",
+          "Tax fee payment assistance on the web",
+          "Tax fee payment assistance on the internet",
+          "Tax bill payment assistance online",
+          "Tax bill payment assistance on the web",
+          "Tax bill payment assistance on the internet",
+          "Tax penalty payment assistance online",
+          "Tax penalty payment assistance on the web",
+          "Tax penalty payment assistance on the internet"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "To pay your City of Phoenix tax bill online, follow the link, OnlineTax3237688344 https://www.phoenix.gov/finance/plt/e-tax"
+            }
+          ]
+        }
+      },
+      {
+        "rejectionStatement": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Por favor ingrese 'Horario de Basura' para introducir su dirección correcta."
+            }
+          ]
+        },
+        "name": "SP_TrashPickUpSchedule",
+        "version": "27",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:653928118540:function:trashSP-dev-trash",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "Horario de la recolección de basura",
+          "Más información sobre el horario de la recolección de basura",
+          "Cuándo es mi día de recolección de basura",
+          "Cuándo se recoge la basura",
+          "Cuándo se recoge basura en la ciudad de Phoenix",
+          "Día de la basura",
+          "Se recoge la basura una vez a la semana",
+          "Cuál es el horario para la recolección  de basura",
+          "Más información sobre la recolección de basura",
+          "Cuándo se recoge la basura en mi casa",
+          "Cuándo se recoge la basura en Phoenix",
+          "Cuál es el horario de recolección de los residuos de Phoenix",
+          "Cuál es el horario de recolección de los residuos para la ciudad de Phoenix",
+          "Cuándo es la próxima recolección  de basura",
+          "Cuándo es el siguiente día de recolección de los residuos",
+          "Cuándo es la recolección de basura",
+          "Necesito que me recojan la basura",
+          "Me gustaría que mi basura fuera recogida",
+          "Necesito que recojan mi basura",
+          "Cuándo se recogerá mi basura ",
+          "Estoy solicitando ayuda con el horario de recolección de los residuos",
+          "Me gustaría solicitar ayuda con el horario de recolección de los residuos",
+          "Cuándo es la recolección de los residuos",
+          "Qué día de la semana es la recolección de los residuos",
+          "Recolección de basura en la ciudad de Phoenix",
+          "Asistencia para el horario de la recolección de basura",
+          "Asistencia para la recolección de basura",
+          "Asistencia de horario de basura",
+          "Asistencia con el horario de recolección de los residuos",
+          "Asistencia con la recolección  de basura",
+          "Recolección de basura",
+          "Asistencia con el horario de la recolección de basura",
+          "Ayuda con el horario de la recolección de basura",
+          "Cuándo es la recolección de basura de Phoenix",
+          "Cuándo se recoge la basura de Phoenix",
+          "Cuándo es el día de recolección de basura en la Ciudad de Phoenix",
+          "HBasura",
+          "Horario de basura"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.PostalAddress",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Para encontrar información sobre el horario de recogida de basura en su área, ingrese su dirección residencial:"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "UserAddress"
+          }
+        ],
+        "confirmationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "¿Puede confirmar que su dirección actual para la recogida de basura es {UserAddress}? Tipo 'yes' para confirmar. Una vez confirmado, puede que me tome unos segundos para recuperar la respuesta por usted."
+            }
+          ],
+          "maxAttempts": 3
+        }
+      },
+      {
+        "name": "OnlineLibraryBill",
+        "version": "19",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "OL",
+          "I would like to pay for my library bill online",
+          "Library bill online",
+          "Pay for library bill online",
+          "Pay my library bill online",
+          "Pay for my library bill online",
+          "How do I pay for my library bill online",
+          "Pay library online",
+          "I want to complete a library payment online",
+          "How can I complete a library payment online",
+          "I want to make a library payment online",
+          "I want to pay a library fee online",
+          "I want to pay a library penalty online",
+          "I want to pay library fees online",
+          "I would like to pay library charges online",
+          "Make a library payment online",
+          "Make a library payment on the web",
+          "Pay a library fee on the web",
+          "Pay a library fee online",
+          "Pay a library fine on the web",
+          "Pay a library fine online",
+          "Library fines on the web",
+          "Library fees on the web",
+          "Library fines online",
+          "Library fees online",
+          "Library penalty payment on the web",
+          "Pay a library penalty on the web",
+          "Pay a library penalty online",
+          "Make a library payment on the internet",
+          "Make a library fee payment on the internet",
+          "Make a library fine payment on the internet",
+          "Make a library penalty payment on the internet",
+          "Pay a library bill on the internet",
+          "Pay a library fee on the internet",
+          "Pay a library fine on the internet",
+          "Pay a library penalty on the internet",
+          "Pay library bills on the internet",
+          "Pay library fees on the internet",
+          "Pay library fines on the internet",
+          "Pay library penalties on the internet",
+          "Can I pay for the library online",
+          "Can I pay for the library on the web",
+          "Can I pay for the library on the internet",
+          "Can I make a library payment online",
+          "Can I make a library payment on the web",
+          "Can I make a library payment on the internet",
+          "Make a library penalty payment online",
+          "Make a library penalty payment on the web",
+          "Make a library fee payment online",
+          "Make a library fee payment on the web",
+          "Make a library fine payment on the web",
+          "Make a library bill payment online",
+          "Make a library bill payment on the web",
+          "Make a library bill payment on the internet",
+          "I have a library penalty that I would like to pay online",
+          "I have a library penalty that I would like to pay on the web",
+          "I have a library penalty that I would like to pay on the internet",
+          "I have a library bill that I would like to pay online",
+          "I have a library bill that I would like to pay on the web",
+          "I have a library bill that I would like to pay on the internet",
+          "I have a library fee that I would like to pay online",
+          "I have a library fee that I would like to pay on the web",
+          "I have a library fee that I would like to pay on the internet",
+          "I have a library fine that I would like to pay online",
+          "I have a library fine that I would like to pay on the web",
+          "I have a library fine that I would like to pay on the internet",
+          "I have library fines that I would like to pay online",
+          "I have library fines that I would like to pay on the web",
+          "I have library fines that I would like to pay on the internet",
+          "I have library fees that I would like to pay online",
+          "I have library fees that I would like to pay on the web",
+          "I have library fees that I would like to pay on the internet",
+          "I have library bills that I would like to pay online",
+          "I have library bills that I would like to pay on the web",
+          "I have library bills that I would like to pay on the internet",
+          "I have library penalties that I would like to pay online",
+          "I have library penalties that I would like to pay on the web",
+          "I have library penalties that I would like to pay on the internet",
+          "Online library penalty payment assistance",
+          "Online library fee payment assistance",
+          "Online library fine payment assistance",
+          "Online library bill payment assistance",
+          "Library fine payment assistance online",
+          "Library fine payment assistance on the web",
+          "Library fine payment assistance on the internet",
+          "Library fee payment assistance online",
+          "Library fee payment assistance on the web",
+          "Library fee payment assistance on the internet",
+          "Library penalty payment assistance online",
+          "Library penalty payment assistance on the web",
+          "Library penalty payment assistance on the internet",
+          "Library bill payment assistance online",
+          "Library bill payment assistance on the web",
+          "Library bill payment assistance on the internet"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "To pay your City of Phoenix library bill online, follow the link, OnlineLibrary6174002917 http://www.phoenixpubliclibrary.org/ServicesForYou/Borrowing-Items/Pages/Library-Fees.aspx"
+            }
+          ]
+        }
+      },
+      {
+        "rejectionStatement": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Ok, please enter 'Trash Schedule' to enter your correct address."
+            }
+          ]
+        },
+        "name": "TrashPickUpSchedule",
+        "version": "31",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:653928118540:function:trash-dev-trash",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "ST",
+          "Trash pick-up schedule",
+          "Trash pick up schedule",
+          "More information about trash pick up schedule",
+          "Trash Schedule",
+          "When is my trash day",
+          "Trash collection",
+          "When is trash picked up",
+          "When is trash pick up",
+          "When is trash collection in the City of Phoenix",
+          "When is trash collected",
+          "Trash day",
+          "Is trash picked up once a week",
+          "What is the schedule for trash pick up",
+          "Trash collection schedule",
+          "Collection of trash",
+          "More information about trash pick up",
+          "When does trash get picked up at my house",
+          "When does trash get picked up at my home",
+          "When does trash get picked up in Phoenix",
+          "What is the Phoenix trash schedule",
+          "What is the trash schedule for the City of Phoenix",
+          "When is the next trash pick up",
+          "When is the next trash day",
+          "When is trash collection",
+          "I need my trash picked up",
+          "I would like my trash to be picked up",
+          "I need for my trash to be picked up",
+          "When will my trash be picked up",
+          "I am requesting assistance with the trash pick up schedule",
+          "I would like to request assistance with the trash pick up schedule",
+          "Trash pickup",
+          "Trash pickup schedule",
+          "When is trash pickup",
+          "What day of the week is the trash pickup",
+          "Trash pickup in the City of Phoenix",
+          "Trash pick up schedule assistance",
+          "Trash pick up assistance",
+          "Trash schedule assistance",
+          "Assistance with trash schedule",
+          "Assistance with trash pick up",
+          "Assistance with trash pick up schedule",
+          "Assistance with trash pickup schedule",
+          "Assistance with trash pickup",
+          "Garbage pickup",
+          "Garbage pick up",
+          "Garbage pick up schedule",
+          "Garbage pickup schedule",
+          "Garbage schedule",
+          "Assistance with garbage pickup schedule",
+          "Help with garbage pick up schedule",
+          "When is the garbage collection",
+          "When is Phoenix garbage collection",
+          "When is Phoenix garbage pick up",
+          "When is the collection day for garbage in the City of Phoenix"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.PostalAddress",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "To find information regarding the trash pick-up schedule in your area, please enter your residential address:"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "UserAddress"
+          }
+        ],
+        "confirmationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Can you confirm that your current residential address for trash pick-up is {UserAddress}? Say 'Yes' to confirm. Once confirmed, I may take a few seconds to retrieve the answer for you."
+            }
+          ],
+          "maxAttempts": 3
+        },
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "*Trash Pick-Up Information After Address Collection*"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_Payments",
+        "version": "9",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Pagos",
+          "Pagar",
+          "Pago",
+          "Toma tarjetas de crédito",
+          "Multas",
+          "Cuotas",
+          "Penalización",
+          "Ayuda con los pagos",
+          "Sanciones",
+          "Tengo preguntas sobre los pagos",
+          "Tengo una pregunta sobre los pagos",
+          "Acepta pagos en efectivo",
+          "Acepta tarjetas de crédito",
+          "Acepta pagos con tarjeta de crédito",
+          "Puedo pagar con tarjeta de crédito",
+          "Pagos completos",
+          "Hacer un pago",
+          "Hacer pagos",
+          "Tengo que pagar",
+          "Quiero pagar",
+          "Pagar por",
+          "Carga a mi tarjeta por",
+          "Puedes cobrarme por",
+          "Tengo un pago que me gustaría hacer",
+          "Tengo un pago que necesito hacer",
+          "Tengo un pago que quiero hacer",
+          "Estoy solicitando ayuda con los pagos",
+          "Me gustaría solicitar asistencia con los pagos",
+          "Asistencia de pago de multas",
+          "Asistencia de pagos",
+          "Asistencia de pago",
+          "Asistencia de pago de facturas",
+          "Asistencia con los pagos",
+          "Asistencia con el pago de facturas",
+          "Asistencia con pagos de multas",
+          "Asistencia con pagos de penalización"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "¿Qué servicio de la ciudad le gustaría completar un pago por? Puede introducir \"Pagar Agua\", \"Pagar Biblioteca\", \"Pagar Estacionamiento\", \"Pagar Parques y Recreación\", \"Pagar Tribunal\", or \"Pagar Impuestos\"."
+            }
+          ]
+        }
+      },
+      {
+        "rejectionStatement": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Por favor ingrese el 'Horario de La Basura en Volumen' para ingresar su dirección correcta."
+            }
+          ]
+        },
+        "name": "SP_BulkTrashPickUp",
+        "version": "20",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:653928118540:function:bulktrashSP-dev-bulktrashpuckup",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "HVolumen",
+          "Horario de la recolección de la basura en volumen",
+          "Cuándo es mi recolección de los residuos en volumen",
+          "Recolección de basura en volumen",
+          "Recolección masiva",
+          "Recolección en bulto",
+          "Horario de la recolección de basura en volumen",
+          "Por qué mi basura no fue recolección",
+          "Por qué mi basura en volumen no fue recolección",
+          "Cuál es el horario para la recolección  de basura en volumen",
+          "Cuándo se recogerá la basura en volume",
+          "Cuándo es la colección de basura en volumen",
+          "Cuándo es la recolección de basura en volumen en Phoenix",
+          "Puede darme más información sobre la recolección  de basura en volumen",
+          "Puede darme más información sobre el horario de la basura en volumen",
+          "Dónde puedo encontrar información sobre el horario de la basura en volumen",
+          "Necesito información sobre la recolección de basura en volumen",
+          "Necesito ayuda para encontrar información de la recolección  de basura en volumen",
+          "Necesito ayuda para encontrar información sobre el horario de basura en volumen",
+          "Estoy solicitando ayuda con el horario de la recolección  de basura en volumen",
+          "Me gustaría solicitar ayuda con el horario de la recolección  de basura en volumen",
+          "Recolección en volumen",
+          "Cuándo es la recolección de los residuos en volumen",
+          "Cuándo es la recolección en volumen",
+          "Qué día de la semana se recoge la basura en volumen",
+          "Recolección  de basura en volumen en la ciudad de Phoenix",
+          "Asistencia para la Recolección de basura en volumen",
+          "Asistencia con la Recolección de basura en volumen",
+          "Horario de La Basura en Volumen"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.PostalAddress",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Por favor ingrese su dirección residencial para la recogida de basura en volumen:"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "UserAddress"
+          }
+        ],
+        "confirmationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "¿Puede confirmar que su dirección actual para la recogida de basura en volumen es {UserAddress}? Tipo 'Yes' confirmar. Una vez confirmado, puede que me tome unos segundos para recuperar la respuesta por usted."
+            }
+          ],
+          "maxAttempts": 3
+        }
+      },
+      {
+        "name": "WaterQuestions",
+        "version": "47",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "How do I start water services",
+          "I need water",
+          "How do I turn on water services",
+          "Water",
+          "Help regarding water",
+          "Help with water",
+          "There is something wrong with my water",
+          "I have an issue with my water",
+          "I want to transfer my water service",
+          "Why is my water off",
+          "Where does City of Phoenix water come from",
+          "I want to turn my water off",
+          "Is City of Phoenix water clean",
+          "I have questions about water",
+          "I have a question about water",
+          "Question about water",
+          "Questions about water",
+          "Water questions",
+          "Water question",
+          "I want information about water services",
+          "I want information about water",
+          "Help me with water",
+          "Get help with water",
+          "Assistance with water",
+          "I need water at my house",
+          "I need water services",
+          "In need of water service",
+          "I need to stop my water services",
+          "I need to transfer my water services",
+          "I need help with my water services",
+          "Transfer water services",
+          "Start water services",
+          "Stop water services",
+          "I want questions answered regarding water",
+          "I want questions answered about water",
+          "I need questions answered regarding water",
+          "I need questions answered about water",
+          "I want help with water",
+          "Can I get help with water services",
+          "Can you help me with water services",
+          "I want assistance with water services",
+          "I need assistance with water services",
+          "I am requesting assistance with water",
+          "I would like to request assistance with water",
+          "Water assistance",
+          "Turn on water services",
+          "Turn on services"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Follow the link, WaterLink8875214091 https://phxatyourservice.dynamics365portals.us/sstwaterservice/?stepid=bbaa1236-6cb0-e711-8115-1458d04e2938&sessionid=9f5836dc-720e-eb11-a813-001dd8018831 for questions regarding water services in the City of Phoenix."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Recycling",
+        "version": "25",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "RECY",
+          "Recycling ",
+          "Replacement of a recycling bin",
+          "What can I recycle",
+          "Recycle",
+          "Help with recycling",
+          "Is metal recyclable",
+          "What is considered recyclable",
+          "Can boxes be recycled",
+          "Can plastic be recycled",
+          "I have a question about recycling",
+          "I have questions about recycling",
+          "Why was my recycling not picked up",
+          "Can I recycle cardboard",
+          "How do I recycle",
+          "What can be recycled",
+          "How to recycle",
+          "What to recycle",
+          "I need help with recycling",
+          "Where does recycling go",
+          "I want to recycle",
+          "I need my recycling picked up",
+          "I need my recycling to be picked up",
+          "What day is recycling picked up",
+          "When is recycling day",
+          "When is recycling picked up",
+          "Where do I put my recycling can",
+          "Where do I put my recycling bin",
+          "Replace a recycling can",
+          "I need to replace a recycling can",
+          "I need a recycling can replaced",
+          "I want questions answered regarding recycling",
+          "I want questions answered about recycling",
+          "I am requesting assistance with recycling",
+          "I would like to request assistance with recycling",
+          "Assistance with recycling",
+          "Recycling assistance"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Follow the link, Recycling5795568820 https://www.phoenix.gov/publicworks/residential-recycling for assistance regarding recycling in the City of Phoenix."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_MissedCollections",
+        "version": "7",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "El recolector de basura olvidó  mi basura",
+          "La recolección de basura olvidó  mi basura",
+          "Mi basura no fue recogida",
+          "La recolección de basura se saltó mi casa",
+          "La recolección de basura olvidó mi casa",
+          "La colección de basura olvidó mi casa",
+          "Falta la recolección de basura",
+          "Recogida de basura perdida",
+          "Por qué mi recolección de basura olvidado",
+          "Por qué mi basura no fue recogida",
+          "Por qué se perdió mi recolección de basura",
+          "Recolección de basura perdida",
+          "Colección perdida",
+          "CPerdida"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Si necesita ayuda con una recolección de basura perdida, siga el enlace MissedCollection5341546347 https://phxatyourservice.dynamics365portals.us/solidwastecontainer/?stepid=30d4ffda-6bb3-e711-8117-1458d04eaba0&sessionid=4ce77644-d8f9-ea11-a813-001dd8018230"
+            }
+          ]
+        }
+      },
+      {
+        "name": "TrashQuestions",
+        "version": "26",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Trash",
+          "Garbage",
+          "Help regarding trash",
+          "I have a question about trash",
+          "I have a trash question",
+          "I have questions about trash",
+          "I need help with trash",
+          "Help with trash",
+          "Help me with trash",
+          "I need assistance with trash",
+          "Questions about trash",
+          "Question about trash",
+          "I want questions answered regarding trash",
+          "I want questions answered about trash",
+          "I need trash information",
+          "I need information about trash",
+          "I need information regarding trash",
+          "I need questions answered about trash",
+          "I need questions answered regarding trash",
+          "Can I get help with trash",
+          "Can you help me with trash",
+          "I would like to request assistance with trash",
+          "I am requesting assistance with trash",
+          "Assistance with trash",
+          "Trash assistance",
+          "Help regarding garbage",
+          "I am requesting assistance with garbage",
+          "Can I get help with garbage",
+          "Can you help me with garbage",
+          "Garbage assistance",
+          "I need more information about garbage",
+          "I need information about garbage",
+          "I need help with garbage",
+          "I have questions about garbage",
+          "Garbage questions",
+          "Questions about garbage"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Select one of the following topics regarding trash:\",\"title\":\"Trash Services\",\"buttons\":[{\"text\":\"Trash Services\",\"value\":\"TService\"},{\"text\":\"Bulk Trash \",\"value\":\"Bulk Trash\"},{\"text\":\"Hazardous Waste\",\"value\":\"HW\"},{\"text\":\"Recycling\",\"value\":\"RECY\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Make a selection below to narrow your search for trash services."
+            }
+          ]
+        }
+      },
+      {
+        "rejectionStatement": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Por favor ingrese 'Agua en Persona' para introducir su dirección correcta."
+            }
+          ]
+        },
+        "name": "SP_InPersonWater",
+        "version": "15",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:653928118540:function:waterpaySP-dev-waterpay",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "APersona",
+          "Me gustaría pagar mi factura por el agua en persona",
+          "Pagar la factura por el agua en persona",
+          "Cómo puedo pagar mi factura por el agua en persona",
+          "Factura por el agua en persona",
+          "Quiero hacer un pago por el agua en persona",
+          "Hacer un pago por el agua en persona",
+          "Hacer un pago de una factura por el agua en persona",
+          "Hacer un pago de multas por el agua en persona",
+          "Hacer un pago por la multa del agua en persona",
+          "Pagar las tasas por el agua en persona",
+          "Pagar multas por el agua en persona",
+          "Pagar las facturas por el agua en persona",
+          "Pagar las multas por el agua en persona",
+          "Pagar por el agua en persona",
+          "Quiero pagar por el agua en persona",
+          "Tengo que pagar por el agua en persona",
+          "Cómo pagar por el agua en persona",
+          "Cómo hacer un pago por la factura por el agua en persona",
+          "Cómo hacer un pago por la cuota por el agua en persona",
+          "Cómo hacer un pago de una multa por el agua en persona",
+          "Cómo hacer un pago por el agua en persona",
+          "Hacer el pago de una factura por el agua en persona",
+          "Hacer un pago de multa por el agua en persona",
+          "Hacer un pago de una cuota por el agua en persona",
+          "Hacer un pago por la factura por el agua en persona",
+          "Hacer un pago por la cuota por el agua en persona",
+          "Hacer un pago de una multa por el agua en persona",
+          "Hacer un pago sanción por el agua en persona",
+          "Tengo una cuota por el agua que me gustaría pagar en persona",
+          "Tengo una factura por el agua que me gustaría pagar en persona",
+          "Tengo una sanción por el agua que me gustaría pagar en persona",
+          "Tengo cuotas por el agua que me gustaría pagar en persona",
+          "Tengo facturas por el agua que me gustaría pagar en persona",
+          "Tengo sanciones por el agua que me gustaría pagar en persona",
+          "Tengo multas por el agua que me gustaría pagar en persona",
+          "Tengo una multa por el agua que me gustaría pagar en persona",
+          "Asistencia de pago por multas por el agua en persona",
+          "Asistencia de pago de facturas por el agua en persona",
+          "Asistencia de pago de tasas por el agua en persona",
+          "Asistencia en persona de pago de multas por el agua"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.PostalAddress",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Para pagar su factura de agua de la Ciudad de Phoenix en persona, ingrese su dirección residencial:"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "UserAddress"
+          }
+        ],
+        "confirmationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "¿Puede confirmar que su dirección actual es {UserAddress}? Tipo 'yes' para confirmar. Una vez confirmado, puede que me tome unos segundos para recuperar la respuesta por usted."
+            }
+          ],
+          "maxAttempts": 3
+        }
+      },
+      {
+        "name": "MissedCollections",
+        "version": "8",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Missed Collection",
+          "Missed trash collection",
+          "Missed trash pickup",
+          "Missed trash pick up",
+          "Why was my trash collection missed",
+          "Why was my trash not picked up",
+          "Why was my garbage not picked up",
+          "Why was my garbage collection missed",
+          "Missed garbage pick up",
+          "Missed garbage pickup",
+          "Missed garbage collection",
+          "My trash was not picked up",
+          "My garbage was not picked up",
+          "Trash collection missed my house",
+          "Garbage collection missed my house",
+          "Garbage collection skipped my house",
+          "Trash collection skipped my house",
+          "MissedC",
+          "My trash wasn't picked up",
+          "My garbage wasn't picked up",
+          "The trash pick up missed my trash",
+          "The trash pick up missed my garbage",
+          "The garbage pick up missed my trash",
+          "The garbage pick up missed my garbage"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "If you need assistance with a missed trash collection, follow the link MissedCollection5701248932 https://phxatyourservice.dynamics365portals.us/solidwastecontainer/?stepid=30d4ffda-6bb3-e711-8117-1458d04eaba0&sessionid=4ce77644-d8f9-ea11-a813-001dd8018230"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_PayLibrary",
+        "version": "2",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Biblioteca de pagos",
+          "Pagos de biblioteca",
+          "Pago de la biblioteca",
+          "Gastos de biblioteca",
+          "Cuota de la biblioteca",
+          "Penalización de la biblioteca",
+          "Sanciones de la biblioteca",
+          "Pagar una biblioteca",
+          "Pagar una multa de biblioteca",
+          "Fina de biblioteca",
+          "Multas de biblioteca",
+          "Realizar un pago de biblioteca",
+          "Hay una penalización por una tarifa tardía de la biblioteca",
+          "Necesito pagar una cuota de biblioteca",
+          "Completar un pago de biblioteca",
+          "Complete un pago por una tarifa de biblioteca",
+          "Completar un pago por una multa de biblioteca",
+          "Complete el pago de una factura de biblioteca",
+          "Completar un pago por una penalización de biblioteca",
+          "Completar un pago de cuota de biblioteca",
+          "Completar un pago de multas por la biblioteca",
+          "Completar el pago de una factura de biblioteca",
+          "Completar un pago de penalización de biblioteca",
+          "Realizar un pago por una cuota de biblioteca",
+          "Realizar un pago por una multa de biblioteca",
+          "Realizar un pago por una factura de biblioteca",
+          "Realizar un pago por una penalización de biblioteca",
+          "Realizar un pago por multas de biblioteca",
+          "Realizar un pago por las cuotas de la biblioteca",
+          "Realizar un pago por las facturas de la biblioteca",
+          "Realizar un pago por las penalizaciones de la biblioteca",
+          "Tengo pagos de biblioteca que me gustaría hacer",
+          "Tengo un pago de biblioteca que me gustaría hacer",
+          "Tengo pagos de biblioteca que necesito hacer",
+          "Tengo un pago de biblioteca que necesito hacer",
+          "Tengo un pago de biblioteca que quiero hacer",
+          "Tengo pagos de biblioteca que quiero hacer",
+          "Tengo pagos de biblioteca que quiero completar",
+          "Tengo pagos de biblioteca que necesito completar",
+          "Tengo pagos de biblioteca que me gustaría completar",
+          "Tengo un pago de biblioteca que quiero completar",
+          "Tengo un pago de biblioteca que necesito completar",
+          "Tengo un pago de biblioteca que me gustaría completar",
+          "Asistencia con los pagos de la biblioteca",
+          "Asistencia con los pagos de cuotas de la biblioteca",
+          "Asistencia con pagos de multas por la biblioteca",
+          "Pagos de facturas de la biblioteca",
+          "Asistencia con pagos de penalización en la biblioteca",
+          "Asistencia de pago por multas de la biblioteca",
+          "Asistencia de pago de multas de la biblioteca",
+          "Asistencia de pago de cuotas de la biblioteca",
+          "Asistencia para el pago de facturas de la biblioteca",
+          "Asistencia de pago en la biblioteca"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Seleccione una de las siguientes:\",\"title\":\"En Línea o En Persona\",\"buttons\":[{\"text\":\"En Persona\",\"value\":\"BPersona\"},{\"text\":\"En Línea\",\"value\":\"BLínea\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "¿Le gustaría pagar su factura de la biblioteca de la Ciudad de Phoenix en línea o en persona?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "InPersonCourtFeeBill",
+        "version": "33",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "InPCF",
+          "Help on an in person court fee bill",
+          "Pay court fee in person",
+          "Pay court in person",
+          "How can I pay for my court bill in person",
+          "I would like to pay for my court bill in person",
+          "I want to complete a court payment in person",
+          "Make a court payment in person",
+          "Make a court bill payment in person",
+          "Make a court fine payment in person",
+          "Make a court fee payment in person",
+          "Make a court penalty payment in person",
+          "Pay for a court penalty in person",
+          "Pay for a court fee in person",
+          "Pay for a court fine in person",
+          "Pay for a court bill in person",
+          "Pay for court bills in person",
+          "Pay for court fees in person",
+          "Pay for court fines in person",
+          "Pay for court penalties in person",
+          "Complete a payment for court fines in person",
+          "Complete a payment for court fees in person",
+          "Complete a payment for court penalties in person",
+          "Complete a payment for court bills in person",
+          "Complete a court fee payment in person",
+          "Complete a court fine payment in person",
+          "Complete a court penalty payment in person",
+          "Complete a court bill payment in person",
+          "I have a court fee that I would like to pay in person",
+          "I have a court bill that I would like to pay in person",
+          "I have a court fine that I would like to pay in person",
+          "I have a court penalty that I would like to pay in person",
+          "I have court fees that I would like to pay in person",
+          "I have court bills that I would like to pay in person",
+          "I have court penalties that I would like to pay in person",
+          "In person court fee payment assistance",
+          "In person court bill payment assistance",
+          "In person court fine payment assistance",
+          "In person court penalty payment assistance",
+          "In person tax fine payment assistance"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "For information regarding paying City of Phoenix court bills, follow the link, InPersonCourt3129688039 https://www.phoenix.gov/court/contact-us"
+            }
+          ]
+        }
+      },
+      {
+        "name": "PayParksAndRecBill",
+        "version": "16",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Pay parks and rec",
+          "Pay parks and recreation",
+          "Park",
+          "Parks and rec",
+          "Parks and recreation payment",
+          "Parks and recreation payments",
+          "Parks and recreation fees",
+          "Parks and recreation fee",
+          "Parks and recreation penalty",
+          "Parks and recreation penalties",
+          "Park payments",
+          "Park payment",
+          "Park fees",
+          "Park fee",
+          "Park penalty",
+          "Park penalties",
+          "Pay a park and recreation",
+          "Pay a parks and recreation fine",
+          "Parks and recreation fine",
+          "Parks and recreation fines",
+          "I need to pay a parks and recreation fee",
+          "I need to pay parks and recreation fees",
+          "Make a parks and recreation payment",
+          "Is there a penalty for a late parks and recreation payment",
+          "Need to pay parks and recreation",
+          "Complete a parks and recreation payment",
+          "Complete a payment for parks and recreation",
+          "Pay for a parks and recreation fine",
+          "Pay for a parks and recreation fee",
+          "Pay for a parks and recreation bill",
+          "Pay for a parks and recreation penalty",
+          "Pay for parks and recreation penalties",
+          "Pay for parks and recreation fines",
+          "Pay for parks and recreation fees",
+          "Pay for parks and recreation bills",
+          "Make a payment for a parks and recreation bill",
+          "Make a payment for a parks and recreation fee",
+          "Make a payment for a parks and recreation fine",
+          "Make a payment for a parks and recreation penalty",
+          "Make a payment for parks and recreation penalties",
+          "Make a payment for parks and recreation bills",
+          "Make a payment for parks and recreation fees",
+          "Make a payment for parks and recreation fines",
+          "I have a parks and recreation payment that I need to make",
+          "I have a parks and recreation payment that I want to make",
+          "I have a parks and recreation payment that I would like to make",
+          "I have parks and recreation payments that I need to make",
+          "I have parks and recreation payments that I want to make",
+          "I have parks and recreation payments that I would like to make",
+          "I have parks and recreation payments that I need to complete",
+          "I have parks and recreation payments that I want to complete",
+          "I have parks and recreation payments that I would like to complete",
+          "I have a parks and recreation payment that I want to complete",
+          "I have a parks and recreation payment that I need to complete",
+          "I have a parks and recreation payment that I would like to complete",
+          "Parks and recreation penalty payment assistance",
+          "Parks and recreation bill payment assistance",
+          "Parks and recreation fee payment assistance",
+          "Parks and recreation fine payment assistance",
+          "Parks and recreation payment assistance",
+          "Assistance with parks and recreation fine payments",
+          "Assistance with parks and recreation fee payments",
+          "Assistance with parks and recreation bill payments",
+          "Assistance with parks and recreation penalty payments",
+          "Assistance with parks and recreation payments",
+          "Park fine",
+          "Park fines",
+          "Pay parks",
+          "Pay park"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Select one of the following:\",\"title\":\"Pay Online or In-Person\",\"buttons\":[{\"text\":\"In-Person\",\"value\":\"InPPR\"},{\"text\":\"Online\",\"value\":\"OPRec\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Would you like to pay your City of Phoenix parks and recreation bill online or in-person?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "OnlineCourtFeeBill",
+        "version": "27",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "OCFee",
+          "Pay for my court fee bill online",
+          "How do I pay for my court fee bill online",
+          "Court fee bill online",
+          "Online court fee bill",
+          "I want to pay for my court fee bill online",
+          "Pay court fee bill online",
+          "I want to complete a court payment online",
+          "Make a court payment online",
+          "Pay a court bill on the web",
+          "Make a court payment on the web",
+          "Pay a court fee on the web",
+          "Pay a court fee online",
+          "Make a court fee payment on the web",
+          "Court fine payment online",
+          "Court fine payment on the web",
+          "Court penalty payment online",
+          "Court penalty payment on the web",
+          "Court fee payment on the web",
+          "Court fee payment online",
+          "Paying court fees on the web",
+          "Paying court fees online",
+          "Pay a court bill on the internet",
+          "Pay a court fee on the internet",
+          "Pay a court fine on the internet",
+          "Pay a court penalty on the internet",
+          "Pay court bills on the internet",
+          "Pay court fees on the internet",
+          "Pay court fines on the internet",
+          "Pay court penalties on the internet",
+          "Make a court fee payment on the internet",
+          "Make a court fine payment on the internet",
+          "Make a court penalty payment on the internet",
+          "Make a court bill payment on the internet",
+          "Make a court payment on the internet",
+          "Can I pay for court online",
+          "Can I pay for court on the web",
+          "Can I pay for court on the internet",
+          "Can I make a court payment online",
+          "Can I make a court payment on the web",
+          "Can I make a court payment on the internet",
+          "Make a court bill payment online",
+          "Make a court bill payment on the web",
+          "Make a court fee payment online",
+          "Make a court fine payment online",
+          "Make a court fine payment on the web",
+          "Make a court penalty payment online",
+          "Make a court penalty payment on the web",
+          "I have court fines that I would like to pay online",
+          "I have court fines that I would like to pay on the web",
+          "I have court fines that I would like to pay on the internet",
+          "I have court fees that I would like to pay online",
+          "I have court fees that I would like to pay on the web",
+          "I have court fees that I would like to pay on the internet",
+          "I have court bills that I would like to pay on the web",
+          "I have court bills that I would like to pay on the internet",
+          "I have court penalties that I would like to pay on the web",
+          "I have court penalties that I would like to pay on the internet",
+          "I have a court fine that I would like to pay on the web",
+          "I have a court fine that I would like to pay on the internet",
+          "I have a court fee that I would like to pay on the web",
+          "I have a court fee that I would like to pay on the internet",
+          "I have a court bill that I would like to pay on the web",
+          "I have a court bill that I would like to pay on the internet",
+          "I have a court penalty that I would like to pay on the web",
+          "I have a court penalty that I would like to pay on the internet",
+          "I have a court penalty that I would like to pay online",
+          "I have a court bill that I would like to pay online",
+          "I have a court fee that I would like to pay online",
+          "I have a court fine that I would like to pay online",
+          "I have court penalties that I would like to pay online",
+          "I have court bills that I would like to pay online",
+          "Online court penalty payment assistance",
+          "Online court bill payment assistance",
+          "Online court fee payment assistance",
+          "Online court fine payment assistance",
+          "Court fine payment assistance online",
+          "Court fine payment assistance on the web",
+          "Court fine payment assistance on the internet",
+          "Court fee payment assistance online",
+          "Court fee payment assistance on the web",
+          "Court fee payment assistance on the internet",
+          "Court penalty payment assistance online",
+          "Court penalty payment assistance on the web",
+          "Court penalty payment assistance on the internet",
+          "Court bill payment assistance on the internet",
+          "Court bill payment assistance on the web",
+          "Court bill payment assistance online",
+          "Pay a court bill online"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "To pay your City of Phoenix court fee bill online, follow the link, OnlineCourt0389315289 https://prodpci.etimspayments.com/pbw/include/arizona/newinput.jsp"
+            }
+          ]
+        }
+      },
+      {
+        "name": "PayLibrary",
+        "version": "9",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Pay Library",
+          "Library payments",
+          "Library payment",
+          "Library fees",
+          "Library fee",
+          "Library penalty",
+          "Library penalties",
+          "Pay a library",
+          "Pay a library fine",
+          "Library fine",
+          "Library fines",
+          "Make a library payment",
+          "Is there a penalty for a late library fee",
+          "I need to pay a library fee",
+          "Complete a library payment",
+          "Complete a payment for a library fee",
+          "Complete a payment for a library fine",
+          "Complete a payment for a library bill",
+          "Complete a payment for a library penalty",
+          "Complete a library fee payment",
+          "Complete a library fine payment",
+          "Complete a library bill payment",
+          "Make a payment for a library fee",
+          "Make a payment for a library fine",
+          "Make a payment for a library bill",
+          "Make a payment for a library penalty",
+          "Make a payment for library fees",
+          "Make a payment for library fines",
+          "Make a payment for library penalties",
+          "Make a payment for library bills",
+          "I have library payments that I would like to make",
+          "I have library payments that I need to make",
+          "I have a library payment that I would like to make",
+          "I have a library payment that I need to make",
+          "I have a library payment that I want to make",
+          "I have library payments that I want to make",
+          "I have library payments that I want to complete",
+          "I have library payments that I need to complete",
+          "I have library payments that I would like to complete",
+          "I have a library payment that I want to complete",
+          "I have a library payment that I would like to complete",
+          "I have a library payment that I need to complete",
+          "Assistance with library payments",
+          "Assistance with library fee payments",
+          "Assistance with library fine payments",
+          "Assistance with library penalty payments",
+          "Assistance with library bill payments",
+          "Library penalty payment assistance",
+          "Library fine payment assistance",
+          "Library fee payment assistance",
+          "Library bill payment assistance",
+          "Library payment assistance"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Select one of the following:\",\"title\":\"Online or In-Person\",\"buttons\":[{\"text\":\"In-Person\",\"value\":\"InPL\"},{\"text\":\"Online\",\"value\":\"OL\"}]}]}",
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Would you like to pay your City of Phoenix library bill online or in-person?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_InPersonParking",
+        "version": "14",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "EPersona",
+          "Pagar multa de estacionamiento en persona",
+          "Estacionamiento de pago en persona",
+          "Cómo puedo pagar mi factura de estacionamiento en persona",
+          "Me gustaría pagar mi factura de estacionamiento en persona",
+          "Me gustaría pagar mi multa de estacionamiento en persona",
+          "Cómo puedo pagar mi multa de estacionamiento en persona",
+          "Quiero hacer un pago de estacionamiento en persona",
+          "Hacer el pago de una multa de estacionamiento en persona",
+          "Pagar por una multa de estacionamiento en persona",
+          "Pagar por un multa de estacionamiento en persona",
+          "Hacer un pago por la factura de una multa de estacionamiento en persona",
+          "Hacer un pago de una multa de estacionamiento en persona",
+          "Hacer un pago por la cuota de una multa de estacionamiento en persona",
+          "Pagar las cuotas de multa de estacionamiento en persona",
+          "Pagar las multa de estacionamiento en persona",
+          "Hacer el pago de una factura de una multa de estacionamiento en persona",
+          "Hacer una multa de estacionamiento pago de multas en persona",
+          "Hacer una pago de multa de estacionamiento en persona",
+          "Tengo una cuota de multa de estacionamiento que me gustaría pagar en persona",
+          "Tengo una multa de estacionamiento que me gustaría pagar en persona",
+          "Tengo de multa de estacionamiento que me gustaría pagar en persona",
+          "Tengo facturas de multa de estacionamiento que me gustaría pagar en persona",
+          "Tengo multa de estacionamiento que me gustaría pagar en persona",
+          "Tengo cuotas de multa de estacionamiento que me gustaría pagar en persona",
+          "Asistencia de multa de estacionamiento en persona",
+          "Asistencia de pago de la multa de estacionamiento en persona",
+          "Asistencia de pago de la cuota de estacionamiento en persona",
+          "Asistencia de pago de multa de billete de estacionamiento en persona"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Para obtener información sobre el pago de las facturas de las multas de estacionamiento, siga el enlace InPersonParking0204010350 https://www.phoenix.gov/court/violations-complaints/parking-tickets"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_OnlineCourt",
+        "version": "26",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "TLínea",
+          "Pagar mi factura de cuota judicial por internet",
+          "Cómo pago mi factura de cuotas de la corte por internet",
+          "Factura de cuotas de la corte por internet",
+          "Factura de por internet de las cuotas de la corte",
+          "Quiero pagar mi factura de cuotas de la corte por internet",
+          "Pagar la factura de la cuota de la corte por internet",
+          "Quiero hacer un pago de las cuotas de la corte por internet",
+          "Hacer un pago por la factura de la corte por internet",
+          "Hacer un pago por la factura de una cuota judicial por internet",
+          "Hacer un pago por una multa judicial por internet",
+          "Pago de multas por internet",
+          "Pago de multas judiciales por internet",
+          "Pago de cuotas judiciales por internet",
+          "Pagar las comisiones judiciales por internet",
+          "Pagar las cuotas de la corte por internet",
+          "Hacer un pago por la factura judicial por internet",
+          "Hacer un pago por una cuota judicial por internet",
+          "Hacer un pago de una multa judicial por internet",
+          "Pagar facturas judiciales por internet",
+          "Pagar comisiones judiciales por internet",
+          "Pagar multas judiciales por internet",
+          "Pagar sanciones judiciales por internet",
+          "Hacer un pago de cuotas judiciales por internet",
+          "Hacer un pago de una factura judicial por internet",
+          "Hacer un pago judicial por internet",
+          "Puedo pagar la corte por internet",
+          "Puedo pagar por la corte por internet",
+          "Puedo hacer un pago de la corte por internet",
+          "Hacer un pago de una cuenta judicial por internet",
+          "Hacer un pago de cuota judicial por internet",
+          "Hacer un pago de multas de la corte por internet",
+          "Hacer un pago de multas judicial por internet",
+          "Hacer un pago de una cuota judicial por internet",
+          "Tengo multas judiciales que me gustaría pagar por internet",
+          "Tengo cuotas judiciales que me gustaría pagar por internet",
+          "Tengo facturas judiciales que me gustaría pagar por internet",
+          "Tengo sanciones judiciales que me gustaría pagar por internet",
+          "Tengo una multa judicial que me gustaría pagar por internet",
+          "Tengo un proyecto de ley que me gustaría pagar por internet",
+          "Tengo una sanción judicial que me gustaría pagar por internet",
+          "Tengo una cuota judicial que me gustaría pagar por internet",
+          "Asistencia de pago de facturas por internet",
+          "Asistencia de pago de cuotas de la corte por internet",
+          "Asistencia en el pago de multas de la corte por internet",
+          "Asistencia de pago de multas de la corte por internet",
+          "Asistencia de pago de cuotas judiciales por internet",
+          "Asistencia de pago de multas en la corte por internet",
+          "Asistencia de pago penal por internet",
+          "Asistencia de pago de facturas de la corte por internet",
+          "Puedo pago judicial por internet"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Para pagar su factura de cuota de la corte de la Ciudad de Phoenix en línea, siga el enlace OnlineCourt3404966442 https://prodpci.etimspayments.com/pbw/include/arizona/newinput.jsp"
+            }
+          ]
+        }
+      },
+      {
+        "name": "FeedbackResponse",
+        "version": "4",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Thumbs Up",
+          "Thumbs Down"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Thank you for your feedback! ¡Gracias por tus comentarios!"
+            }
+          ]
+        }
+      },
+      {
+        "name": "SP_HazardousWaste",
+        "version": "11",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "ResP",
+          "Asistencia en los residuos peligrosos",
+          "Me gustaría solicitar asistencia con los residuos peligrosos",
+          "Estoy solicitando ayuda con los residuos peligrosos",
+          "Quiero que se respondan preguntas sobre los residuos peligrosos",
+          "Necesito información sobre los residuos peligrosos",
+          "Como deshacerse de los los residuos peligrosos",
+          "Puede ayudarme a obtener información sobre los residuos peligrosos",
+          "Puede ayudarme a encontrar información sobre los residuos peligrosos",
+          "Información sobre los residuos peligrosos",
+          "Quiero más información sobre los residuos peligrosos",
+          "Necesito ayuda con los residuos peligrosos",
+          "Quiero ayuda con los los residuos peligrosos",
+          "Cómo me deshago de los los residuos peligrosos",
+          "Cómo des debo eliminar los los residuos peligrosos",
+          "Qué son los los residuos peligrosos",
+          "Qué se consideran productos químicos peligrosos",
+          "La pintura se considera los residuos peligroso",
+          "Qué artículos se consideran los residuos peligrosos",
+          "Qué artículos son los residuos peligrosos",
+          "Peligroso",
+          "Donde se ponen los los residuos peligrosos",
+          "A dónde van los residuo peligrosos",
+          "Qué es residuo peligroso",
+          "Lo que se considera residuo peligroso",
+          "Qué productos químicos se consideran residuos peligrosos",
+          "Qué son productos de limpieza los residuos peligrosos",
+          "Ayuda con los residuos peligrosos",
+          "Los residuos peligrosos"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Sigue el enlace, HazardousLink0042833764 https://www.phoenix.gov/publicworks/hhw para asistencia en materia de residuos peligrosos en la Ciudad de Phoenix."
+            }
+          ]
+        }
+      },
+      {
+        "name": "WasteContainerRequests",
+        "version": "6",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "I need a new garbage can",
+          "I need a new trash can",
+          "How can I get a new trash can",
+          "My trash can is missing",
+          "How to replace a trash can",
+          "How can I get a new garbage can",
+          "Where can I get a new garbage can",
+          "Where can I get a new trash can",
+          "How to get a new trash can",
+          "How to get a new garbage can",
+          "Replacing a garbage can",
+          "Replacing a trash can",
+          "I want to replace my trash can",
+          "I want to replace my garbage can",
+          "Waste Container"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "For questions regarding waste container requests or replacements, follow the link WasteContainer3143500222 https://phxatyourservice.dynamics365portals.us/solidwastecontainer/?stepid=30d4ffda-6bb3-e711-8117-1458d04eaba0&sessionid=4ce77644-d8f9-ea11-a813-001dd8018230"
+            }
+          ]
+        }
+      }
+    ],
+    "voiceId": "Salli",
+    "childDirected": false,
+    "locale": "en-US",
+    "idleSessionTTLInSeconds": 300,
+    "clarificationPrompt": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, I do not understand. Can you please try again? Lo siento, no entiendo. ¿Puedes intentarlo de nuevo?"
+        }
+      ],
+      "maxAttempts": 5
+    },
+    "abortStatement": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, I could not understand. Please call the City of Phoenix General Assistance line to speak to a representative at 602-262-6011. Lo siento, no entiendo. Para asistencia general, llamada 602-262-6011."
+        }
+      ]
+    },
+    "detectSentiment": false,
+    "enableModelImprovements": false
+  }
+}
